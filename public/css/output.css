@@ -434,8 +434,17 @@
     outline-width: 1px;
   }
   @media (hover: hover) {
+    :is(:where(.group):hover .group-hover\:text-white) {
+      color: var(--color-white);
+    }
     .hover\:bg-\[\#0a69ca\]:hover {
       background-color: #0a69ca;
+    }
+    .hover\:bg-\[\#0d83fd\]:hover {
+      background-color: #0d83fd;
+    }
+    .hover\:bg-\[\#\]:hover {
+      background-color: #;
     }
     .hover\:text-\[\#0a6\]:hover {
       color: #0a6;
@@ -451,6 +460,9 @@
     }
     .hover\:text-\[\#\]:hover {
       color: #;
+    }
+    .hover\:text-white:hover {
+      color: var(--color-white);
     }
   }
 }
