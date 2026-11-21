@@ -1,13 +1,158 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
-    <link rel="stylesheet" href="./public/css/output.css" />
-  </head>
-  <body>
-    <section class="flex items-center gap-[10rem] p-[7rem]">
+    <link rel="stylesheet" href="./public/css/output.css">
+</head>
+
+<body class="bg-[#F0F6FC] ">
+     <nav class="bg-[#FFFFFF] flex justify-between py-4 px-6 rounded-full  items-center shadow-[10px_10px_5px_0px_gray] lg:fixed lg:top-[18px] lg:left-[40px] lg:right-[40px]  max-sm:top-[10px] max-sm:left-[20px] max-sm:right-[20px]  max-sm:relative max-sm:fixed max-sm:top-[10px] max-sm:left-[20px] max-sm:right-[20px]">
+        <h1 class="text-xl font-medium text-[#475D72]">iLanding</h1>
+        <!-- <div class="flex justify-between lg:w-[50%] max-sm:flex-col  max-sm:pl-4 max-sm:pt-4 max-sm:absolute max-sm:top-18  max-sm:w-[95%] max-sm:h-[550px] rounded bg-amber-700"> -->
+<div class="flex justify-between lg:w-[50%]
+            max-sm:flex-col
+            max-sm:pl-4
+            max-sm:pt-4
+            max-sm:absolute
+            max-sm:top-18
+            max-sm:left-1/2
+            max-sm:-translate-x-1/2
+            max-sm:w-[95%]
+            max-sm:h-[550px]
+           ">
+            <a href="" class="hover:text-[#4AA2FE]">Home</a>
+            <a href="" class="hover:text-[#4AA2FE]">About</a>
+            <a href="" class="hover:text-[#4AA2FE]">Features</a>
+            <a href="" class="hover:text-[#4AA2FE]">Services</a>
+            <a href="" class="hover:text-[#4AA2FE]">Pricing</a>
+            <div class="flex lg:items-center max-sm:justify-between">
+                            <a href="" class="hover:text-[#4AA2FE]">Dropdown </a>
+                            <span class="max-sm:bg-[#E6F2FE] max-sm:rounded-full max-sm:w-8 max-sm:h-8 max-sm:flex max-sm:justify-center max-sm:items-center" ><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#000000" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></span>
+            </div>
+            <a href="" class="hover:text-[#4AA2FE]">Contact</a>
+        </div>
+        <div class="max-sm:flex max-sm:gap-2.5 max-sm:items-center">
+            <a href="" class="bg-[#0D83FD] text-[white] rounded-full lg:py-1.5 lg:px-4 max-sm:py-1 max-sm:px-2">Get Started</a>
+        <span class="lg:hidden"><svg xmlns="http://www.w3.org/01oç2000/svg" width="25" height="25" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg></span>
+        </div>
+    </nav>
+    <main>
+        <section class="flex flex-col gap-10 px-30">
+            <div class="flex items-center justify-between">
+                <div class="flex flex-col gap-8">
+                    <div
+                        class="bg-[#e1efff] flex items-center gap-2 w-fit p-3 rounded-[2rem] text-[#0d83fd] font-semibold">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 512 512">
+                            <path d="M0 0h512v512H0z" fill="none" />
+                            <path fill="#0d83fd"
+                                d="M256 176a80 80 0 1 0 80 80a80.24 80.24 0 0 0-80-80m172.72 80a165.5 165.5 0 0 1-1.64 22.34l48.69 38.12a11.59 11.59 0 0 1 2.63 14.78l-46.06 79.52a11.64 11.64 0 0 1-14.14 4.93l-57.25-23a176.6 176.6 0 0 1-38.82 22.67l-8.56 60.78a11.93 11.93 0 0 1-11.51 9.86h-92.12a12 12 0 0 1-11.51-9.53l-8.56-60.78A169.3 169.3 0 0 1 151.05 393L93.8 416a11.64 11.64 0 0 1-14.14-4.92L33.6 331.57a11.59 11.59 0 0 1 2.63-14.78l48.69-38.12A175 175 0 0 1 83.28 256a165.5 165.5 0 0 1 1.64-22.34l-48.69-38.12a11.59 11.59 0 0 1-2.63-14.78l46.06-79.52a11.64 11.64 0 0 1 14.14-4.93l57.25 23a176.6 176.6 0 0 1 38.82-22.67l8.56-60.78A11.93 11.93 0 0 1 209.94 26h92.12a12 12 0 0 1 11.51 9.53l8.56 60.78A169.3 169.3 0 0 1 361 119l57.2-23a11.64 11.64 0 0 1 14.14 4.92l46.06 79.52a11.59 11.59 0 0 1-2.63 14.78l-48.69 38.12a175 175 0 0 1 1.64 22.66" />
+                        </svg>
+                        Working for your success
+                    </div>
+                    <div class="flex flex-col gap-2 text-[#2d465e] ">
+                        <p class="font-bold text-5xl ">Maecenas Vitae</p>
+                        <p class="font-bold text-5xl ">Consectetur Led </p>
+                        <p class="font-bold text-5xl text-[#0d83fd]">Vestibulum Ante</p>
+                    </div>
+                    <p class="w-[90%] ">
+                        Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla
+                        mauris sit amet nibh. Donec sodales sagittis magna.
+                    </p>
+                    <div class="flex gap-5">
+                        <button
+                            class="bg-[#0d83fd] text-white font-medium hover:bg-[#0a69ca] cursor-pointer py-3 px-8 rounded-[2rem]">Get
+                            Started</button>
+                        <button
+                            class="flex items-center gap-2 text-[#2d465e] font-medium hover:text-[#0a69ca] cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 16 16"
+                                class="hover:text-[#0a69ca]">
+                                <path d="M0 0h16v16H0z" fill="none" />
+                                <g fill="currentColor">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                    <path
+                                        d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
+                                </g>
+                            </svg>
+
+                            Play Video
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <img src="./public/images/illustration-1.webp" alt="">
+                </div>
+            </div>
+            <div class="flex items-center justify-between shadow-xl px-10 py-14 rounded-2xl">
+                <div class="flex items-center gap-5">
+                    <div class="group bg-[#e1efff] p-4 rounded-[50%] hover:bg-[#0d83fd] text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16"
+                            class="text-[#0d83fd] hover:text-white group-hover:text-white">
+                            <path d="M0 0h16v16H0z" fill="none" />
+                            <path fill="currentColor"
+                                d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935M3.504 1q.01.775.056 1.469c.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.5.5 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864c.413-1.12.74-2.64.87-4.667q.045-.694.056-1.469z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-[#2d465e] font-medium text-xl">3x Won Awards</p>
+                        <p class="text-[darkgray]">Vestibulum ante ipsum</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-5">
+                    <div class="group bg-[#e1efff] p-4 rounded-[50%] hover:bg-[#0d83fd] text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16"
+                            class="text-[#0d83fd] hover:text-white group-hover:text-white">
+                            <path d="M0 0h16v16H0z" fill="none" />
+                            <path fill="currentColor"
+                                d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5" />
+                        </svg>
+                    </div>
+
+                    <div>
+                        <p class="text-[#2d465e] font-medium text-xl">6.5k Faucibus</p>
+                        <p class="text-[darkgray]">Nullam quis ante</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-5">
+                    <div class="group bg-[#e1efff] p-4 rounded-[50%] hover:bg-[#0d83fd] text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16"
+                            class="text-[#0d83fd] hover:text-white group-hover:text-white">
+                            <path d="M0 0h16v16H0z" fill="none" />
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="M0 0h1v15h15v1H0zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61l4.15-5.073a.5.5 0 0 1 .704-.07" />
+                        </svg>
+                    </div>
+
+                    <div>
+                        <p class="text-[#2d465e] font-medium text-xl">80k Mauris</p>
+                        <p class="text-[darkgray]">Etiam sit amet orci</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-5">
+                    <div class="group bg-[#e1efff] p-4 rounded-[50%] hover:bg-[#0d83fd] text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16"
+                            class="text-[#0d83fd] hover:text-white group-hover:text-white">
+                            <path d="M0 0h16v16H0z" fill="none" />
+                            <g fill="currentColor">
+                                <path
+                                    d="M9.669.864L8 0L6.331.864l-1.858.282l-.842 1.68l-1.337 1.32L2.6 6l-.306 1.854l1.337 1.32l.842 1.68l1.858.282L8 12l1.669-.864l1.858-.282l.842-1.68l1.337-1.32L13.4 6l.306-1.854l-1.337-1.32l-.842-1.68zm1.196 1.193l.684 1.365l1.086 1.072L12.387 6l.248 1.506l-1.086 1.072l-.684 1.365l-1.51.229L8 10.874l-1.355-.702l-1.51-.229l-.684-1.365l-1.086-1.072L3.614 6l-.25-1.506l1.087-1.072l.684-1.365l1.51-.229L8 1.126l1.356.702z" />
+                                <path d="M4 11.794V16l4-1l4 1v-4.206l-2.018.306L8 13.126L6.018 12.1z" />
+                            </g>
+                        </svg>
+
+                    </div>
+
+                    <div>
+                        <p class="text-[#2d465e] font-medium text-xl">6x Phasellus</p>
+                        <p class="text-[darkgray]">Vestibulum ante ipsum</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <section class="flex items-center gap-[10rem] p-[7rem]">
       <div class="flex flex-col gap-[2rem]">
         <span class="text-[#0d83fd] font-bold">MORE ABOUT US</span>
 
@@ -184,11 +329,11 @@
       </div>
 
       <div
-        class="bg-[url('../images/img-1.jpg')] bg-cover bg-center bg-no-repeat w-[40vw] h-[70vh] rounded-2xl relative"
+        class="bg-[url('../images/img-1.jpg')] bg-cover bg-center bg-no-repeat w-[50vw] h-[70vh] rounded-2xl relative"
       >
         <div>
           <img
-            class="w-[300px] border-8 border-solid absolute left-[-5rem] top-[7rem] border-white rounded-3xl"
+            class="w-[300px] border-8 border-solid absolute left-[-7rem] top-[9rem] border-white rounded-3xl"
             src="./public/images/img-2.jpg"
             alt=""
           />
@@ -201,5 +346,7 @@
         </div>
       </div>
     </section>
-  </body>
+    </main>
+</body>
+
 </html>
