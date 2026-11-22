@@ -233,6 +233,15 @@
   .z-50 {
     z-index: 50;
   }
+  .m-30 {
+    margin: calc(var(--spacing) * 30);
+  }
+  .mx-20 {
+    margin-inline: calc(var(--spacing) * 20);
+  }
+  .mx-30 {
+    margin-inline: calc(var(--spacing) * 30);
+  }
   .mt-1 {
     margin-top: var(--spacing);
   }
@@ -242,17 +251,33 @@
   .mt-25 {
     margin-top: calc(var(--spacing) * 25);
   }
+  .mr-0 {
+    margin-right: 0px;
+  }
   .mr-0\.5 {
     margin-right: calc(var(--spacing) * 0.5);
   }
+  .mb-0 {
+    margin-bottom: 0px;
+  }
   .mb-0\.5 {
     margin-bottom: calc(var(--spacing) * 0.5);
+  }
+  .ml-1 {
+    margin-left: var(--spacing);
   }
   .ml-1\.5 {
     margin-left: calc(var(--spacing) * 1.5);
   }
   .flex {
     display: flex;
+  }
+  .table {
+    display: table;
+  }
+  .size-15 {
+    width: calc(var(--spacing) * 15);
+    height: calc(var(--spacing) * 15);
   }
   .h-4 {
     height: calc(var(--spacing) * 4);
@@ -350,14 +375,23 @@
   .flex-1 {
     flex: 1;
   }
+  .flex-shrink {
+    flex-shrink: 1;
+  }
   .shrink-0 {
     flex-shrink: 0;
+  }
+  .border-collapse {
+    border-collapse: collapse;
   }
   .transform {
     transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -373,6 +407,9 @@
   }
   .justify-center {
     justify-content: center;
+  }
+  .gap-0 {
+    gap: 0px;
   }
   .gap-0\.5 {
     gap: calc(var(--spacing) * 0.5);
@@ -480,6 +517,9 @@
   .rounded-\[50\%\] {
     border-radius: 50%;
   }
+  .rounded-\[50\] {
+    border-radius: 50;
+  }
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
@@ -532,6 +572,9 @@
   }
   .border-\[white\] {
     border-color: white;
+  }
+  .border-black {
+    border-color: var(--color-black);
   }
   .border-black\/70 {
     border-color: color-mix(in srgb, #000 70%, transparent);
@@ -629,6 +672,9 @@
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }
+  .p-10 {
+    padding: calc(var(--spacing) * 10);
+  }
   .p-20 {
     padding: calc(var(--spacing) * 20);
   }
@@ -674,6 +720,9 @@
   .px-\[3rem\] {
     padding-inline: 3rem;
   }
+  .py-1 {
+    padding-block: var(--spacing);
+  }
   .py-1\.5 {
     padding-block: calc(var(--spacing) * 1.5);
   }
@@ -712,6 +761,12 @@
   }
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
+  }
+  .pt-20 {
+    padding-top: calc(var(--spacing) * 20);
+  }
+  .pt-40 {
+    padding-top: calc(var(--spacing) * 40);
   }
   .pt-\[4rem\] {
     padding-top: 4rem;
@@ -841,6 +896,9 @@
   .text-\[white\] {
     color: white;
   }
+  .text-black {
+    color: var(--color-black);
+  }
   .text-black\/60 {
     color: color-mix(in srgb, #000 60%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -871,6 +929,9 @@
   .text-white {
     color: var(--color-white);
   }
+  .underline {
+    text-decoration-line: underline;
+  }
   .shadow-\[10px_10px_5px_0px_gray\] {
     --tw-shadow: 10px 10px 5px 0px var(--tw-shadow-color, gray);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -878,6 +939,10 @@
   .shadow-xl {
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .outline-4 {
     outline-style: var(--tw-outline-style);
