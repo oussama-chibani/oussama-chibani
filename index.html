@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Website</title>
     <link rel="stylesheet" href="./public/css/output.css" />
+    <style>
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-scroll {
+            animation: scroll 20s linear infinite;
+        }
+    </style>
 </head>
 
 <body>
@@ -574,6 +589,39 @@
                 <a href="" class=" border border-[white] px-4 py-2 rounded-full bg-[#3195FD]">
                     Call To Action</a>
             </div>
+        </section>
+        <!-- scroll section -->
+        <section class="overflow-hidden w-full">
+            <div class="flex w-max animate-scroll gap-16">
+                <div class="min-w-64 ">
+                    <img src="./public/images/bilimo-logo.png" alt="" width="85">
+                </div>
+                <div class="min-w-64 ">
+                    <img src="./public/images/citros-logo.png" alt="" width="85">
+                </div>
+                <div class="min-w-64 ">
+                    <img src="./public/images/grabyo-logo.png" alt="" width="85">
+                </div>
+                <div class="min-w-64 ">
+                    <img src="./public/images/client-2.png" alt="" width="85">
+                </div>
+                <div class="min-w-64 ">
+                    <img src="./public/images/life-groupes-logo.png" alt="" width="85">
+                </div>
+                <div class="min-w-64 ">
+                    <img src="./public/images/lilly-logo.png" alt="" width="85">
+                </div>
+                <div class="min-w-64 ">
+                    <img src="./public/images/myob-logo.png" alt="" width="85">
+                </div>
+                <div class="min-w-64 ">
+                    <img src="./public/images/olden-logo.png" alt="" width="85px" height="85px">
+                </div>
+                
+                
+            </div>
+            
+            
         </section>
         <section class="flex justify-center items-center flex-col gap-15 bg-[#f3f9ff] h-fit py-15">
             <div class="flex flex-col items-center justify-center gap-15 px-30">
