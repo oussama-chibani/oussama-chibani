@@ -1,2115 +1,1440 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Website</title>
     <link rel="stylesheet" href="./public/css/output.css" />
     <style>
-      @keyframes scroll {
-        0% {
-          transform: translateX(0);
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
-        100% {
-          transform: translateX(-50%);
+        .animate-scroll {
+            animation: scroll 20s linear infinite;
         }
-      }
-
-      .animate-scroll {
-        animation: scroll 20s linear infinite;
-      }
     </style>
-  </head>
+</head>
 
-  <body class="bg-blue-50">
+<body class="bg-blue-50">
     <!-- nav -->
     <nav
-      class="bg-[#FFFFFF] flex justify-between py-4 px-6 rounded-full z-50 items-center shadow-[10px_10px_5px_0px_gray] lg:fixed lg:top-[18px] lg:left-[40px] lg:right-[40px] max-sm:top-[10px] max-sm:left-[20px] max-sm:right-[20px] max-sm:relative max-sm:fixed max-sm:top-[10px] max-sm:left-[20px] max-sm:right-[20px]"
-    >
-      <h1 class="text-xl font-medium text-[#475D72] cursor-pointer">
-        iLanding
-      </h1>
-      <!-- <div class="flex justify-between lg:w-[50%] max-sm:flex-col  max-sm:pl-4 max-sm:pt-4 max-sm:absolute max-sm:top-18  max-sm:w-[95%] max-sm:h-[550px] rounded bg-amber-700"> -->
-      <div
-        class="flex justify-between lg:w-[50%] max-sm:flex-col max-sm:pl-4 max-sm:pt-4 max-sm:absolute max-sm:top-18 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:w-[95%] hidden max-sm:h-[550px]"
-      >
-        <a href="" class="hover:text-[#4AA2FE]">Home</a>
-        <a href="" class="hover:text-[#4AA2FE]">About</a>
-        <a href="" class="hover:text-[#4AA2FE]">Features</a>
-        <a href="" class="hover:text-[#4AA2FE]">Services</a>
-        <a href="" class="hover:text-[#4AA2FE]">Pricing</a>
-        <div class="flex lg:items-center max-sm:justify-between">
-          <a href="" class="hover:text-[#4AA2FE]">Dropdown </a>
-          <span
-            class="max-sm:bg-[#E6F2FE] max-sm:rounded-full max-sm:w-8 max-sm:h-8 max-sm:flex max-sm:justify-center max-sm:items-center"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              fill="#000000"
-              viewBox="0 0 256 256"
-            >
-              <path
-                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-              ></path>
+        class="bg-[#FFFFFF] flex justify-between py-4 px-6 rounded-full z-50 items-center shadow-[10px_10px_5px_0px_gray] lg:fixed lg:top-[18px] lg:left-[40px] lg:right-[40px] max-sm:fixed max-sm:top-[10px] max-sm:left-[20px] max-sm:right-[20px]">
+        <input type="checkbox" id="menu-toggle" class="peer hidden" />
+
+        <h1 class="text-xl font-medium text-[#475D72] cursor-pointer">iLanding</h1>
+
+        <!-- Khalfiya ka7la f mobile mni kayt-7ell l-menu -->
+        <label for="menu-toggle"
+            class="hidden max-sm:peer-checked:block fixed inset-0 bg-black/50 z-40"></label>
+
+        <!-- Button X bach t-sedd l-menu f mobile -->
+        <label for="menu-toggle"
+            class="hidden max-sm:peer-checked:block fixed top-5 right-6 z-50 text-white cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                    d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z">
+                </path>
             </svg>
-          </span>
+        </label>
+
+        <!-- Links -->
+        <div
+            class="flex justify-between lg:w-[50%] max-sm:hidden max-sm:peer-checked:flex max-sm:flex-col max-sm:justify-start max-sm:gap-6 max-sm:p-6 max-sm:bg-white max-sm:rounded-2xl max-sm:shadow-2xl max-sm:fixed max-sm:top-18 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:w-[92%] max-sm:h-[82vh] max-sm:z-50">
+            <a href="" class="hover:text-[#4AA2FE]">Home</a>
+            <a href="" class="hover:text-[#4AA2FE]">About</a>
+            <a href="" class="hover:text-[#4AA2FE]">Features</a>
+            <a href="" class="hover:text-[#4AA2FE]">Services</a>
+            <a href="" class="hover:text-[#4AA2FE]">Pricing</a>
+            <div class="flex lg:items-center max-sm:justify-between max-sm:items-center">
+                <a href="" class="hover:text-[#4AA2FE]">Dropdown </a>
+                <span
+                    class="max-sm:bg-[#E6F2FE] max-sm:rounded-full max-sm:w-8 max-sm:h-8 max-sm:flex max-sm:justify-center max-sm:items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                        </path>
+                    </svg>
+                </span>
+            </div>
+            <a href="" class="hover:text-[#4AA2FE]">Contact</a>
         </div>
-        <a href="" class="hover:text-[#4AA2FE]">Contact</a>
-      </div>
-      <div class="max-sm:flex max-sm:gap-2.5 max-sm:items-center">
-        <a
-          href=""
-          class="bg-[#0D83FD] text-[white] rounded-full lg:py-1.5 lg:px-4 max-sm:py-1 max-sm:px-2"
-          >Get Started</a
-        >
-        <span class="lg:hidden">
-          <svg
-            xmlns="http://www.w3.org/01oç2000/svg"
-            width="25"
-            height="25"
-            fill="#000000"
-            viewBox="0 0 256 256"
-          >
-            <path
-              d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
-            ></path>
-          </svg>
-        </span>
-      </div>
+
+        <div class="max-sm:flex max-sm:gap-2.5 max-sm:items-center">
+            <a href="" class="bg-[#0D83FD] text-[white] rounded-full lg:py-1.5 lg:px-4 max-sm:py-1.5 max-sm:px-3">Get
+                Started</a>
+            <label for="menu-toggle" class="lg:hidden cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#000000" viewBox="0 0 256 256">
+                    <path
+                        d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z">
+                    </path>
+                </svg>
+            </label>
+        </div>
     </nav>
 
     <main>
-      <!-- hero-section -->
-      <section class="flex flex-col gap-10 px-30 pt-40">
-        <div class="flex items-center justify-between">
-          <div class="flex flex-col gap-8">
-            <div
-              class="bg-[#e1efff] flex items-center gap-2 w-fit p-3 rounded-[2rem] text-[#0d83fd] font-semibold"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1.5em"
-                height="1.5em"
-                viewBox="0 0 512 512"
-              >
-                <path d="M0 0h512v512H0z" fill="none" />
-                <path
-                  fill="#0d83fd"
-                  d="M256 176a80 80 0 1 0 80 80a80.24 80.24 0 0 0-80-80m172.72 80a165.5 165.5 0 0 1-1.64 22.34l48.69 38.12a11.59 11.59 0 0 1 2.63 14.78l-46.06 79.52a11.64 11.64 0 0 1-14.14 4.93l-57.25-23a176.6 176.6 0 0 1-38.82 22.67l-8.56 60.78a11.93 11.93 0 0 1-11.51 9.86h-92.12a12 12 0 0 1-11.51-9.53l-8.56-60.78A169.3 169.3 0 0 1 151.05 393L93.8 416a11.64 11.64 0 0 1-14.14-4.92L33.6 331.57a11.59 11.59 0 0 1 2.63-14.78l48.69-38.12A175 175 0 0 1 83.28 256a165.5 165.5 0 0 1 1.64-22.34l-48.69-38.12a11.59 11.59 0 0 1-2.63-14.78l46.06-79.52a11.64 11.64 0 0 1 14.14-4.93l57.25 23a176.6 176.6 0 0 1 38.82-22.67l8.56-60.78A11.93 11.93 0 0 1 209.94 26h92.12a12 12 0 0 1 11.51 9.53l8.56 60.78A169.3 169.3 0 0 1 361 119l57.2-23a11.64 11.64 0 0 1 14.14 4.92l46.06 79.52a11.59 11.59 0 0 1-2.63 14.78l-48.69 38.12a175 175 0 0 1 1.64 22.66"
-                />
-              </svg>
-              Working for your success
-            </div>
-            <div class="flex flex-col gap-2 text-[#2d465e]">
-              <p class="font-bold text-5xl">Maecenas Vitae</p>
-              <p class="font-bold text-5xl">Consectetur Led</p>
-              <p class="font-bold text-5xl text-[#0d83fd]">Vestibulum Ante</p>
-            </div>
-            <p class="w-[90%]">
-              Nullam quis ante. Etiam sit amet orci eget eros faucibus
-              tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec
-              sodales sagittis magna.
-            </p>
-            <div class="flex gap-5">
-              <button
-                class="bg-[#0d83fd] text-white font-medium hover:bg-[#0a69ca] cursor-pointer py-3 px-8 rounded-[2rem]"
-              >
-                Get Started
-              </button>
-              <button
-                class="flex items-center gap-2 text-[#2d465e] font-medium hover:text-[#0a69ca] cursor-pointer"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.5em"
-                  height="1.5em"
-                  viewBox="0 0 16 16"
-                  class="hover:text-[#0a69ca]"
-                >
-                  <path d="M0 0h16v16H0z" fill="none" />
-                  <g fill="currentColor">
-                    <path
-                      d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
-                    />
-                    <path
-                      d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"
-                    />
-                  </g>
-                </svg>
-                Play Video
-              </button>
-            </div>
-          </div>
-          <div>
-            <img src="./public/images/illustration-1.webp" alt="" />
-          </div>
-        </div>
-
-        <div
-          class="flex items-center justify-between shadow-xl px-10 py-14 rounded-2xl"
-        >
-          <div class="flex items-center gap-5">
-            <div
-              class="group bg-[#e1efff] p-4 rounded-[50%] hover:bg-[#0d83fd] text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="2em"
-                height="2em"
-                viewBox="0 0 16 16"
-                class="text-[#0d83fd] hover:text-white group-hover:text-white"
-              >
-                <path d="M0 0h16v16H0z" fill="none" />
-                <path
-                  fill="currentColor"
-                  d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935M3.504 1q.01.775.056 1.469c.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.5.5 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864c.413-1.12.74-2.64.87-4.667q.045-.694.056-1.469z"
-                />
-              </svg>
-            </div>
-            <div>
-              <p class="text-[#2d465e] font-medium text-xl">3x Won Awards</p>
-              <p class="text-[darkgray]">Vestibulum ante ipsum</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-5">
-            <div
-              class="group bg-[#e1efff] p-4 rounded-[50%] hover:bg-[#0d83fd] text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="2em"
-                height="2em"
-                viewBox="0 0 16 16"
-                class="text-[#0d83fd] hover:text-white group-hover:text-white"
-              >
-                <path d="M0 0h16v16H0z" fill="none" />
-                <path
-                  fill="currentColor"
-                  d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5"
-                />
-              </svg>
-            </div>
-            <div>
-              <p class="text-[#2d465e] font-medium text-xl">6.5k Faucibus</p>
-              <p class="text-[darkgray]">Nullam quis ante</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-5">
-            <div
-              class="group bg-[#e1efff] p-4 rounded-[50%] hover:bg-[#0d83fd] text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="2em"
-                height="2em"
-                viewBox="0 0 16 16"
-                class="text-[#0d83fd] hover:text-white group-hover:text-white"
-              >
-                <path d="M0 0h16v16H0z" fill="none" />
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M0 0h1v15h15v1H0zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61l4.15-5.073a.5.5 0 0 1 .704-.07"
-                />
-              </svg>
-            </div>
-            <div>
-              <p class="text-[#2d465e] font-medium text-xl">80k Mauris</p>
-              <p class="text-[darkgray]">Etiam sit amet orci</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-5">
-            <div
-              class="group bg-[#e1efff] p-4 rounded-[50%] hover:bg-[#0d83fd] text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="2em"
-                height="2em"
-                viewBox="0 0 16 16"
-                class="text-[#0d83fd] hover:text-white group-hover:text-white"
-              >
-                <path d="M0 0h16v16H0z" fill="none" />
-                <g fill="currentColor">
-                  <path
-                    d="M9.669.864L8 0L6.331.864l-1.858.282l-.842 1.68l-1.337 1.32L2.6 6l-.306 1.854l1.337 1.32l.842 1.68l1.858.282L8 12l1.669-.864l1.858-.282l.842-1.68l1.337-1.32L13.4 6l.306-1.854l-1.337-1.32l-.842-1.68zm1.196 1.193l.684 1.365l1.086 1.072L12.387 6l.248 1.506l-1.086 1.072l-.684 1.365l-1.51.229L8 10.874l-1.355-.702l-1.51-.229l-.684-1.365l-1.086-1.072L3.614 6l-.25-1.506l1.087-1.072l.684-1.365l1.51-.229L8 1.126l1.356.702z"
-                  />
-                  <path
-                    d="M4 11.794V16l4-1l4 1v-4.206l-2.018.306L8 13.126L6.018 12.1z"
-                  />
-                </g>
-              </svg>
-            </div>
-            <div>
-              <p class="text-[#2d465e] font-medium text-xl">6x Phasellus</p>
-              <p class="text-[darkgray]">Vestibulum ante ipsum</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- about-us-section -->
-      <section
-        class="flex items-center gap-[10rem] p-[7rem] bg-white max-sm:px-5 max-sm:py-12 max-sm:gap-10 max-sm:flex-col max-sm:items-start"
-      >
-        <div class="flex flex-col gap-[2rem] max-sm:w-full">
-          <span class="text-[#0d83fd] font-bold">MORE ABOUT US</span>
-
-          <h1 class="font-bold text-2xl">Voluptas enim suscipit temporibus</h1>
-
-          <p class="w-[30vw] max-sm:w-full text-gray-800">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo.
-          </p>
-
-          <div
-            class="flex gap-[2rem] items-center max-sm:flex-col max-sm:items-start max-sm:gap-0"
-          >
-            <div>
-              <ul>
-                <li class="flex items-center gap-4 p-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    fill="none"
-                  >
-                    <circle cx="12" cy="12" r="12" fill="#0A7CFF" />
-                    <path
-                      d="M7.5 12.2L10.5 15.2L16.8 8.8"
-                      stroke="#FFFFFF"
-                      stroke-width="2.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Lorem ipsum dolor sit amet
-                </li>
-                <li class="flex items-center gap-4 p-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    fill="none"
-                  >
-                    <circle cx="12" cy="12" r="12" fill="#0A7CFF" />
-                    <path
-                      d="M7.5 12.2L10.5 15.2L16.8 8.8"
-                      stroke="#FFFFFF"
-                      stroke-width="2.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Consectetur adipiscing elit
-                </li>
-                <li class="flex items-center gap-4 p-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    fill="none"
-                  >
-                    <circle cx="12" cy="12" r="12" fill="#0A7CFF" />
-                    <path
-                      d="M7.5 12.2L10.5 15.2L16.8 8.8"
-                      stroke="#FFFFFF"
-                      stroke-width="2.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Sed do eiusmod tempor
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <ul>
-                <li class="flex items-center gap-4 p-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    fill="none"
-                  >
-                    <circle cx="12" cy="12" r="12" fill="#0A7CFF" />
-                    <path
-                      d="M7.5 12.2L10.5 15.2L16.8 8.8"
-                      stroke="#FFFFFF"
-                      stroke-width="2.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Lorem ipsum dolor sit amet
-                </li>
-                <li class="flex items-center gap-4 p-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    fill="none"
-                  >
-                    <circle cx="12" cy="12" r="12" fill="#0A7CFF" />
-                    <path
-                      d="M7.5 12.2L10.5 15.2L16.8 8.8"
-                      stroke="#FFFFFF"
-                      stroke-width="2.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Consectetur adipiscing elit
-                </li>
-                <li class="flex items-center gap-4 p-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    fill="none"
-                  >
-                    <circle cx="12" cy="12" r="12" fill="#0A7CFF" />
-                    <path
-                      d="M7.5 12.2L10.5 15.2L16.8 8.8"
-                      stroke="#FFFFFF"
-                      stroke-width="2.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Sed do eiusmod tempor
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="flex gap-[3rem] max-sm:flex-col max-sm:gap-6">
-            <div class="flex gap-[1rem] items-center">
-              <img
-                class="w-[80px] rounded-[50%]"
-                src="./public/images/pic-profil.jpg"
-                alt=""
-              />
-              <div>
-                <p>Mario Smith</p>
-                <span class="text-blue-600">CEO & Founder</span>
-              </div>
-            </div>
-
-            <div
-              class="flex items-center gap-[1rem] shadow-xl px-4 py-3 rounded-xl"
-            >
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="40"
-                  height="40"
-                  fill="#0A7CFF"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
-                  />
-                </svg>
-              </div>
-
-              <div>
-                <p>Call us anytime</p>
-                <p class="font-bold">+123 456-789</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="relative w-[50vw] max-sm:w-full max-sm:flex max-sm:flex-col max-sm:gap-6"
-        >
-          <div
-            class="bg-[url('../images/img-1.jpg')] bg-cover bg-center bg-no-repeat w-full h-[70vh] max-sm:h-[250px] rounded-2xl"
-          ></div>
-
-          <img
-            class="w-[300px] border-8 border-solid absolute left-[-7rem] top-[9rem] border-white rounded-3xl max-sm:static max-sm:w-full max-sm:border-0"
-            src="./public/images/img-2.jpg"
-            alt=""
-          />
-
-          <div
-            class="bg-blue-500 text-white flex flex-col rounded-2xl p-4 items-center justify-center absolute bottom-4 right-5 max-sm:static max-sm:w-full"
-          >
-            <p><span class="text-4xl">15+</span>Years</p>
-            <p>Of experience in business service</p>
-          </div>
-        </div>
-      </section>
-      <!-- features-section -->
-      <section class="p-[5rem] bg-white">
-        <div class="flex flex-col gap-[2rem] items-center">
-          <div
-            class="flex justify-center items-center p-[2rem] w-[50px] border-blue-500 border-b-4"
-          >
-            <h1 class="text-4xl">Features</h1>
-          </div>
-          <div class="flex justify-center items-center">
-            <p>
-              Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-              consectetur velit
-            </p>
-          </div>
-
-          <div class="flex bg-gray-200 gap-[3rem] p-4 rounded-4xl">
-            <button>
-              <a class="bg-[#0d83fd] py-3 px-6 text-white rounded-3xl" href=""
-                >Modisit</a
-              >
-            </button>
-            <button>
-              <a class="hover:text-blue-500" href="">Praesenti</a>
-            </button>
-            <button><a class="hover:text-blue-500" href="">Explica</a></button>
-          </div>
-        </div>
-
-        <div class="flex justify-center items-center gap-3 px-[3rem] pt-[4rem]">
-          <div class="flex flex-col gap-5">
-            <div class="flex flex-col gap-6">
-              <h1 class="text-3xl font-medium">
-                Voluptatem dignissimos provident
-              </h1>
-              <span class="border-b-3 border-blue-600 w-[50px]"></span>
-            </div>
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-
-            <ul class="flex flex-col gap-[1rem]">
-              <li class="flex gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  class="w-5 h-5 text-[#0d83fd] shrink-0"
-                >
-                  <path
-                    d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0"
-                  />
-                  <path
-                    d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708"
-                  />
-                </svg>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </li>
-              <li class="flex gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  class="w-5 h-5 text-[#0d83fd] shrink-0"
-                >
-                  <path
-                    d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0"
-                  />
-                  <path
-                    d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708"
-                  />
-                </svg>
-                Duis aute irure dolor in reprehenderit in voluptate velit.
-              </li>
-              <li class="flex gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  class="w-5 h-5 text-[#0d83fd] shrink-0"
-                >
-                  <path
-                    d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0"
-                  />
-                  <path
-                    d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708"
-                  />
-                </svg>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                aute irure dolor in reprehenderit in voluptate trideta
-                storacalaperda mastiro dolore eu fugiat nulla pariatur.
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <img src="./public/images/img-3.png" alt="" />
-          </div>
-        </div>
-
-        <div
-          class="pt-[7rem] flex gap-[2rem] justify-center p-[4rem] items-center"
-        >
-          <div
-            class="bg-[#fff3e2] rounded-2xl flex flex-col gap-[2rem] p-[1rem]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              class="w-10 h-10 text-[#edb86e]"
-            >
-              <path
-                d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702z"
-              />
-              <path
-                d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z"
-              />
-            </svg>
-            <span>Corporis voluptates</span>
-
-            <p>
-              Consequuntur sunt aut quasi enim aliquam quae harum pariatur
-              laboris nisi ut aliquip
-            </p>
-          </div>
-
-          <div
-            class="bg-[#deedfd] flex flex-col rounded-2xl gap-[2rem] p-[1rem]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              class="w-10 h-10 text-[#20a5f8]"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708 0"
-              />
-              <path
-                d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911z"
-              />
-            </svg>
-            <span>Corporis voluptates</span>
-
-            <p>
-              Consequuntur sunt aut quasi enim aliquam quae harum pariatur
-              laboris nisi ut aliquip
-            </p>
-          </div>
-
-          <div
-            class="bg-[#d5f1e4] flex flex-col rounded-2xl gap-[2rem] p-[1rem]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              class="w-10 h-10 text-[#48c88a]"
-            >
-              <path
-                d="M7.646 1.146a.5.5 0 0 1 .708 0l1.5 1.5a.5.5 0 0 1-.708.708L8.5 2.707V4.5a.5.5 0 0 1-1 0V2.707l-.646.647a.5.5 0 1 1-.708-.708zM2.343 4.343a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707m11.314 0a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0M8 7a3 3 0 0 1 2.599 4.5H5.4A3 3 0 0 1 8 7m3.71 4.5a4 4 0 1 0-7.418 0H.499a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10m13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"
-              />
-            </svg>
-            <span>Corporis voluptates</span>
-
-            <p>
-              Consequuntur sunt aut quasi enim aliquam quae harum pariatur
-              laboris nisi ut aliquip
-            </p>
-          </div>
-
-          <div
-            class="bg-[#fdeded] flex rounded-2xl flex-col gap-[2rem] p-[1rem]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              class="w-10 h-10 text-[#f28482]"
-            >
-              <path
-                d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"
-              />
-              <path
-                d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"
-              />
-            </svg>
-            <span>Corporis voluptates</span>
-
-            <p>
-              Consequuntur sunt aut quasi enim aliquam quae harum pariatur
-              laboris nisi ut aliquip
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- phone-section -->
-      <section
-        class="flex gap-12 lg:justify-center py-8 px-30 lg:items-center max-sm:flex-col bg-white"
-      >
-        <!-- div-parent-1 -->
-        <div class="flex lg:flex-col lg:gap-6 lg:justify-center">
-          <!-- div1 -->
-          <div class="flex text-right justify-center items-center gap-10">
-            <div>
-              <h1 class="text-[#446082] text-2xl">Use On Any Device</h1>
-              <p class="text-[gray] text-lg">
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
-              </p>
-            </div>
-            <div
-              class="p-4 rounded-[50%] bg-[#e1efff] flex items-center justify-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1.5em"
-                height="1.5em"
-                fill="#3785eb"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  d="M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8Zm-48,48a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,224Z"
-                ></path>
-              </svg>
-            </div>
-          </div>
-
-          <!-- div2 -->
-          <div class="flex text-right justify-center items-center gap-10">
-            <div class="text-right">
-              <h1 class="text-[#446082] text-2xl">Feather Icons</h1>
-              <p class="text-[gray] text-lg">
-                Phasellus ullamcorper ipsum rutrum nunc nunc nonummy metus
-                vestibulum volutpat sapien arcu sed augue aliquam erat volutpat.
-              </p>
-            </div>
-            <div class="w-15 h-15 bg-[#e1efff] rounded-full">
-              <span
-                class="p-4 rounded-[50%] bg-[#e1efff] flex items-center justify-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="#3785eb"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M221.28,34.75a64,64,0,0,0-90.49,0L60.69,104A15.9,15.9,0,0,0,56,115.31v73.38L26.34,218.34a8,8,0,0,0,11.32,11.32L67.32,200H140.7A15.92,15.92,0,0,0,152,195.32l0,0,69.23-70A64,64,0,0,0,221.28,34.75ZM142.07,46.06A48,48,0,0,1,211.79,112H155.33l34.35-34.34a8,8,0,0,0-11.32-11.32L120,124.69V67.87ZM72,115.35l32-31.67v57l-32,32ZM140.7,184H83.32l56-56h56.74Z"
-                  ></path>
-                </svg>
-              </span>
-            </div>
-          </div>
-
-          <!-- div3 -->
-          <div class="flex text-right justify-center items-center gap-10">
-            <div class="text-right">
-              <h1 class="text-[#446082] text-2xl">Retina Ready</h1>
-              <p class="text-[gray] text-lg">
-                Aenean tellus metus bibendum sed posuere ac mattis non nunc
-                vestibulum fringilla purus sit amet fermentum aenean commodo.
-              </p>
-            </div>
-            <div
-              class="p-4 rounded-[50%] bg-[#e1efff] flex items-center justify-center"
-            >
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="#3785eb"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"
-                  ></path>
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- div-parent-2 -->
-        <div>
-          <img src="./public/images/phone-app-screen.webp" alt="" />
-        </div>
-
-        <!-- div-parent-3 -->
-        <div class="flex lg:flex-col lg:items-end lg:gap-8 lg:justify-center">
-          <!-- div1 -->
-          <div class="flex justify-center items-center gap-10">
-            <div
-              class="p-4 rounded-[50%] bg-[#e1efff] flex items-center justify-center"
-            >
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="#3785eb"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M181.66,146.34a8,8,0,0,1,0,11.32l-24,24a8,8,0,0,1-11.32-11.32L164.69,152l-18.35-18.34a8,8,0,0,1,11.32-11.32Zm-72-24a8,8,0,0,0-11.32,0l-24,24a8,8,0,0,0,0,11.32l24,24a8,8,0,0,0,11.32-11.32L91.31,152l18.35-18.34A8,8,0,0,0,109.66,122.34ZM216,88V216a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88Zm-56-8h28.69L160,51.31Zm40,136V96H152a8,8,0,0,1-8-8V40H56V216H200Z"
-                  ></path>
-                </svg>
-              </span>
-            </div>
-            <div class="">
-              <h1 class="text-[#446082] text-2xl">Use On Any Device</h1>
-              <p class="text-[gray] text-lg">
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
-              </p>
-            </div>
-          </div>
-
-          <!-- div2 -->
-          <div class="flex justify-center items-center gap-10">
-            <div
-              class="p-4 rounded-[50%] bg-[#e1efff] flex items-center justify-center"
-            >
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="#3785eb"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16Zm8,200a8,8,0,0,1-8,8H80a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96a8,8,0,0,1,8,8ZM140,60a12,12,0,1,1-12-12A12,12,0,0,1,140,60Z"
-                  ></path>
-                </svg>
-              </span>
-            </div>
-            <div>
-              <h1 class="text-[#446082] text-2xl">Feather Icons</h1>
-              <p class="text-[gray] text-lg">
-                Phasellus ullamcorper ipsum rutrum nunc nunc nonummy metus
-                vestibulum volutpat sapien arcu sed augue aliquam erat volutpat.
-              </p>
-            </div>
-          </div>
-
-          <!-- div3 -->
-          <div class="flex justify-center items-center gap-10">
-            <div
-              class="p-4 rounded-[50%] bg-[#e1efff] flex items-center justify-center"
-            >
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="#3785eb"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,16a88,88,0,0,1,73.72,40H128a48.08,48.08,0,0,0-45.6,33l-23.08-40A87.89,87.89,0,0,1,128,40Zm32,88a32,32,0,1,1-32-32A32,32,0,0,1,160,128ZM40,128a87.44,87.44,0,0,1,9.56-39.86L86.43,152c.06.1.13.19.19.28A48,48,0,0,0,137.82,175l-23.1,40A88.14,88.14,0,0,1,40,128Zm92.69,87.87L169.57,152c.08-.14.14-.28.22-.42a47.88,47.88,0,0,0-6-55.58H210a88,88,0,0,1-77.29,119.87Z"
-                  ></path>
-                </svg>
-              </span>
-            </div>
-            <div>
-              <h1 class="text-[#446082] text-2xl">Retina Ready</h1>
-              <p class="text-[gray] text-lg">
-                Aenean tellus metus bibendum sed posuere ac mattis non nunc
-                vestibulum fringilla purus sit amet fermentum aenean commodo.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- blue-section -->
-      <section class="flex flex-col justify-center items-center p-20 bg-white">
-        <div
-          class="text-[white] bg-[#0D83FD] text-center space-y-8 px-60 py-15 rounded"
-        >
-          <h1 class="text-5xl font-light">
-            Maecenas tempus tellus eget <br />
-            condimentum
-          </h1>
-          <p>
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-            posuere cubilia Curae; Donec velit neque, auctor sit <br />
-            amet aliquam vel
-          </p>
-          <a
-            href=""
-            class="border border-[white] px-4 py-2 rounded-full bg-[#3195FD]"
-          >
-            Call To Action</a
-          >
-        </div>
-      </section>
-      <!-- scroll section -->
-      <section class="overflow-hidden w-full py-10 bg-white">
-        <div class="flex w-max animate-scroll gap-16">
-          <div class="min-w-64">
-            <img src="./public/images/bilimo-logo.png" alt="" width="85" />
-          </div>
-          <div class="min-w-64">
-            <img src="./public/images/citros-logo.png" alt="" width="85" />
-          </div>
-          <div class="min-w-64">
-            <img src="./public/images/grabyo-logo.png" alt="" width="85" />
-          </div>
-          <div class="min-w-64">
-            <img src="./public/images/client-2.png" alt="" width="85" />
-          </div>
-          <div class="min-w-64">
-            <img
-              src="./public/images/life-groupes-logo.png"
-              alt=""
-              width="85"
-            />
-          </div>
-          <div class="min-w-64">
-            <img src="./public/images/lilly-logo.png" alt="" width="85" />
-          </div>
-          <div class="min-w-64">
-            <img src="./public/images/myob-logo.png" alt="" width="85" />
-          </div>
-          <div class="min-w-64">
-            <img
-              src="./public/images/olden-logo.png"
-              alt=""
-              width="85px"
-              height="85px"
-            />
-          </div>
-        </div>
-      </section>
-      <!-- Testimonials -->
-      <section
-        class="flex justify-center items-center flex-col gap-15 bg-blue-50 h-fit py-15"
-      >
-        <div class="flex flex-col items-center justify-center gap-15 px-30">
-          <div class="flex flex-col items-center gap-5">
-            <div
-              class="flex items-center justify-center border-b-4 pb-8 border-[#0d83fd] w-[50px]"
-            >
-              <p class="text-[#2d465e] w-fit text-4xl font-semibold">
-                Testimonials
-              </p>
-            </div>
-            <p>
-              Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-              consectetur velit
-            </p>
-          </div>
-          <div class="flex flex-col gap-10">
-            <div class="flex justify-between gap-10">
-              <div
-                class="flex flex-1 flex-col gap-4 p-5 bg-white shadow-xl w-fit"
-              >
-                <div class="flex items-center gap-4">
-                  <div>
-                    <img
-                      class="rounded-[50%] outline-[#f3f9ff] outline-4"
-                      src="./public/images/testimonials-1.jpg"
-                      width="90px"
-                      alt=""
-                    />
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <p class="text-[#2d465e] font-medium">SaulGoodman</p>
-                    <p class="text-[darkgray] text-lg font-medium">
-                      Ceo & Founder
+        <!-- hero-section -->
+        <section class="flex flex-col gap-10 px-30 pt-40 max-sm:px-4 max-sm:text-center">
+            <div class="flex max-sm:flex-col max-sm:gap-15 items-center justify-between">
+                <div class="flex flex-col max-sm:justify-center max-sm:items-center gap-8">
+                    <div
+                        class="bg-[#e1efff] flex items-center gap-2 w-fit p-3 rounded-[2rem] text-[#0d83fd] font-semibold">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 512 512">
+                            <path d="M0 0h512v512H0z" fill="none" />
+                            <path fill="#0d83fd"
+                                d="M256 176a80 80 0 1 0 80 80a80.24 80.24 0 0 0-80-80m172.72 80a165.5 165.5 0 0 1-1.64 22.34l48.69 38.12a11.59 11.59 0 0 1 2.63 14.78l-46.06 79.52a11.64 11.64 0 0 1-14.14 4.93l-57.25-23a176.6 176.6 0 0 1-38.82 22.67l-8.56 60.78a11.93 11.93 0 0 1-11.51 9.86h-92.12a12 12 0 0 1-11.51-9.53l-8.56-60.78A169.3 169.3 0 0 1 151.05 393L93.8 416a11.64 11.64 0 0 1-14.14-4.92L33.6 331.57a11.59 11.59 0 0 1 2.63-14.78l48.69-38.12A175 175 0 0 1 83.28 256a165.5 165.5 0 0 1 1.64-22.34l-48.69-38.12a11.59 11.59 0 0 1-2.63-14.78l46.06-79.52a11.64 11.64 0 0 1 14.14-4.93l57.25 23a176.6 176.6 0 0 1 38.82-22.67l8.56-60.78A11.93 11.93 0 0 1 209.94 26h92.12a12 12 0 0 1 11.51 9.53l8.56 60.78A169.3 169.3 0 0 1 361 119l57.2-23a11.64 11.64 0 0 1 14.14 4.92l46.06 79.52a11.59 11.59 0 0 1-2.63 14.78l-48.69 38.12a175 175 0 0 1 1.64 22.66" />
+                        </svg>
+                        Working for your success
+                    </div>
+                    <div class="flex flex-col gap-2 text-[#2d465e]">
+                        <p class="font-bold text-5xl max-sm:text-3xl">Maecenas Vitae</p>
+                        <p class="font-bold text-5xl max-sm:text-3xl">Consectetur Led</p>
+                        <p class="font-bold text-5xl max-sm:text-3xl text-[#0d83fd]">Vestibulum Ante</p>
+                    </div>
+                    <p class="w-[90%]">
+                        Nullam quis ante. Etiam sit amet orci eget eros faucibus
+                        tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec
+                        sodales sagittis magna.
                     </p>
-                    <p>⭐⭐⭐⭐⭐</p>
-                  </div>
+                    <div class="flex gap-5 max-sm:justify-center">
+                        <button
+                            class="bg-[#0d83fd] text-white font-medium hover:bg-[#0a69ca] cursor-pointer py-3 px-8 rounded-[2rem]">
+                            Get Started
+                        </button>
+                        <button
+                            class="flex items-center gap-2 text-[#2d465e] font-medium hover:text-[#0a69ca] cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 16 16"
+                                class="hover:text-[#0a69ca]">
+                                <path d="M0 0h16v16H0z" fill="none" />
+                                <g fill="currentColor">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                    <path
+                                        d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
+                                </g>
+                            </svg>
+                            Play Video
+                        </button>
+                    </div>
                 </div>
                 <div>
-                  Proin iaculis purus consequat sem cure digni ssim donec
-                  porttitora entum suscipit rhoncus. Accusantium quam, ultricies
-                  eget id, aliquam eget nibh et. Maecen aliquam, risus at
-                  semper.
+                    <img src="./public/images/illustration-1.webp" alt="" />
                 </div>
-              </div>
-              <div
-                class="flex flex-1 flex-col gap-4 p-5 bg-white shadow-xl w-fit"
-              >
-                <div class="flex items-center gap-4">
-                  <div>
-                    <img
-                      class="rounded-[50%] outline-[#f3f9ff] outline-4"
-                      src="./public/images/testimonials-2.jpg"
-                      width="90px"
-                      alt=""
-                    />
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <p class="text-[#2d465e] font-medium">Sara Wilsson</p>
-                    <p class="text-[darkgray] text-lg font-medium">Designer</p>
-                    <p>⭐⭐⭐⭐⭐</p>
-                  </div>
-                </div>
-                <div>
-                  Export tempor illum tamen malis malis eram quae irure esse
-                  labore quem cillum quid cillum eram malis quorum velit fore
-                  eram velit sunt aliqua noster fugiat irure amet legam anim
-                  culpa.
-                </div>
-              </div>
             </div>
-            <div class="flex justify-between gap-10">
-              <div
-                class="flex flex-1 flex-col gap-4 p-5 bg-white shadow-xl w-fit"
-              >
-                <div class="flex items-center gap-4">
-                  <div>
-                    <img
-                      class="rounded-[50%] outline-[#f3f9ff] outline-4"
-                      src="./public/images/testimonials-3.jpg"
-                      width="90px"
-                      alt=""
-                    />
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <p class="text-[#2d465e] font-medium">Jena Karlis</p>
-                    <p class="text-[darkgray] text-lg font-medium">
-                      Store Owner
+
+            <div
+                class="flex items-center justify-between shadow-xl px-10 py-14 rounded-2xl max-sm:flex-col max-sm:items-start max-sm:gap-20">
+                <div class="flex items-center gap-5">
+                    <div class="group bg-[#e1efff] p-4 rounded-[50%] hover:bg-[#0d83fd] text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16"
+                            class="text-[#0d83fd] hover:text-white group-hover:text-white">
+                            <path d="M0 0h16v16H0z" fill="none" />
+                            <path fill="currentColor"
+                                d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935M3.504 1q.01.775.056 1.469c.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.5.5 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864c.413-1.12.74-2.64.87-4.667q.045-.694.056-1.469z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-[#2d465e] font-medium text-xl">3x Won Awards</p>
+                        <p class="text-[darkgray]">Vestibulum ante ipsum</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-5">
+                    <div class="group bg-[#e1efff] p-4 rounded-[50%] hover:bg-[#0d83fd] text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16"
+                            class="text-[#0d83fd] hover:text-white group-hover:text-white">
+                            <path d="M0 0h16v16H0z" fill="none" />
+                            <path fill="currentColor"
+                                d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-[#2d465e] font-medium text-xl">6.5k Faucibus</p>
+                        <p class="text-[darkgray]">Nullam quis ante</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-5">
+                    <div class="group bg-[#e1efff] p-4 rounded-[50%] hover:bg-[#0d83fd] text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16"
+                            class="text-[#0d83fd] hover:text-white group-hover:text-white">
+                            <path d="M0 0h16v16H0z" fill="none" />
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="M0 0h1v15h15v1H0zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61l4.15-5.073a.5.5 0 0 1 .704-.07" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-[#2d465e] font-medium text-xl">80k Mauris</p>
+                        <p class="text-[darkgray]">Etiam sit amet orci</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-5">
+                    <div class="group bg-[#e1efff] p-4 rounded-[50%] hover:bg-[#0d83fd] text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16"
+                            class="text-[#0d83fd] hover:text-white group-hover:text-white">
+                            <path d="M0 0h16v16H0z" fill="none" />
+                            <g fill="currentColor">
+                                <path
+                                    d="M9.669.864L8 0L6.331.864l-1.858.282l-.842 1.68l-1.337 1.32L2.6 6l-.306 1.854l1.337 1.32l.842 1.68l1.858.282L8 12l1.669-.864l1.858-.282l.842-1.68l1.337-1.32L13.4 6l.306-1.854l-1.337-1.32l-.842-1.68zm1.196 1.193l.684 1.365l1.086 1.072L12.387 6l.248 1.506l-1.086 1.072l-.684 1.365l-1.51.229L8 10.874l-1.355-.702l-1.51-.229l-.684-1.365l-1.086-1.072L3.614 6l-.25-1.506l1.087-1.072l.684-1.365l1.51-.229L8 1.126l1.356.702z" />
+                                <path d="M4 11.794V16l4-1l4 1v-4.206l-2.018.306L8 13.126L6.018 12.1z" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-[#2d465e] font-medium text-xl">6x Phasellus</p>
+                        <p class="text-[darkgray]">Vestibulum ante ipsum</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- about-us-section -->
+        <section
+            class="flex items-center gap-[10rem] p-[7rem] bg-white max-sm:px-5 max-sm:py-12 max-sm:gap-10 max-sm:flex-col max-sm:items-start">
+            <div class="flex flex-col gap-[2rem] max-sm:w-full">
+                <span class="text-[#0d83fd] font-bold">MORE ABOUT US</span>
+
+                <h1 class="font-bold text-2xl">Voluptas enim suscipit temporibus</h1>
+
+                <p class="w-[30vw] max-sm:w-full text-gray-800">
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                    accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                    quae ab illo inventore veritatis et quasi architecto beatae vitae
+                    dicta sunt explicabo.
+                </p>
+
+                <div class="flex gap-[2rem] items-center max-sm:flex-col max-sm:items-start max-sm:gap-0">
+                    <div>
+                        <ul>
+                            <li class="flex items-center gap-4 p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                    fill="none" class="shrink-0">
+                                    <circle cx="12" cy="12" r="12" fill="#0A7CFF" />
+                                    <path d="M7.5 12.2L10.5 15.2L16.8 8.8" stroke="#FFFFFF" stroke-width="2.2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Lorem ipsum dolor sit amet
+                            </li>
+                            <li class="flex items-center gap-4 p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                    fill="none" class="shrink-0">
+                                    <circle cx="12" cy="12" r="12" fill="#0A7CFF" />
+                                    <path d="M7.5 12.2L10.5 15.2L16.8 8.8" stroke="#FFFFFF" stroke-width="2.2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Consectetur adipiscing elit
+                            </li>
+                            <li class="flex items-center gap-4 p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                    fill="none" class="shrink-0">
+                                    <circle cx="12" cy="12" r="12" fill="#0A7CFF" />
+                                    <path d="M7.5 12.2L10.5 15.2L16.8 8.8" stroke="#FFFFFF" stroke-width="2.2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Sed do eiusmod tempor
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul>
+                            <li class="flex items-center gap-4 p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                    fill="none" class="shrink-0">
+                                    <circle cx="12" cy="12" r="12" fill="#0A7CFF" />
+                                    <path d="M7.5 12.2L10.5 15.2L16.8 8.8" stroke="#FFFFFF" stroke-width="2.2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Incididunt ut labore et
+                            </li>
+                            <li class="flex items-center gap-4 p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                    fill="none" class="shrink-0">
+                                    <circle cx="12" cy="12" r="12" fill="#0A7CFF" />
+                                    <path d="M7.5 12.2L10.5 15.2L16.8 8.8" stroke="#FFFFFF" stroke-width="2.2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Dolore magna aliqua
+                            </li>
+                            <li class="flex items-center gap-4 p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                    fill="none" class="shrink-0">
+                                    <circle cx="12" cy="12" r="12" fill="#0A7CFF" />
+                                    <path d="M7.5 12.2L10.5 15.2L16.8 8.8" stroke="#FFFFFF" stroke-width="2.2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Ut enim ad minim veniam
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative w-[50vw] max-sm:w-full max-sm:flex max-sm:flex-col max-sm:gap-6">
+                <div
+                    class="bg-[url('../images/img-1.jpg')] bg-cover bg-center bg-no-repeat w-full h-[70vh] max-sm:h-[250px] rounded-2xl">
+                </div>
+
+                <img class="w-[300px] border-8 border-solid absolute left-[-7rem] top-[9rem] border-white rounded-3xl max-sm:static max-sm:w-full max-sm:border-0"
+                    src="./public/images/img-2.jpg" alt="" />
+
+                <div
+                    class="bg-blue-500 text-white flex flex-col rounded-2xl p-4 items-center justify-center absolute bottom-4 right-5 max-sm:static max-sm:w-full">
+                    <p><span class="text-4xl">15+</span>Years</p>
+                    <p>Of experience in business service</p>
+                </div>
+            </div>
+        </section>
+        <!-- features-section -->
+        <section class="px-30 bg-white max-sm:px-4">
+            <div class="flex flex-col gap-[2rem] items-center ">
+                <div class="flex justify-center items-center p-[2rem] w-[50px] border-blue-500 border-b-4">
+                    <h1 class="text-4xl">Features</h1>
+                </div>
+                <div class="flex max-sm:text-center">
+                    <p>
+                        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+                        consectetur velit
                     </p>
-                    <p>⭐⭐⭐⭐⭐</p>
-                  </div>
                 </div>
-                <div>
-                  Enim nisi quem export duis labore cillum quae magna enim sint
-                  quorum nulla quem veniam duis minim tempor labore quem eram
-                  duis noster aute amet eram fore quis sint minim.
+
+                <div class="flex bg-gray-200 gap-[3rem] p-4 rounded-4xl max-sm:gap-4 max-sm:p-3">
+                    <button>
+                        <a class="bg-[#0d83fd] py-3 px-6 text-white rounded-3xl" href="">Modisit</a>
+                    </button>
+                    <button>
+                        <a class="hover:text-blue-500" href="">Praesenti</a>
+                    </button>
+                    <button><a class="hover:text-blue-500" href="">Explica</a></button>
                 </div>
-              </div>
-              <div
-                class="flex flex-1 flex-col gap-4 p-5 bg-white shadow-xl w-fit"
-              >
-                <div class="flex items-center gap-4">
-                  <div>
-                    <img
-                      class="rounded-[50%] outline-[#f3f9ff] outline-4"
-                      src="./public/images/testimonials-4.jpg"
-                      width="90px"
-                      alt=""
-                    />
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <p class="text-[#2d465e] font-medium">Matt Brandon</p>
-                    <p class="text-[darkgray] text-lg font-medium">
-                      Freelancer
+            </div>
+
+            <div class="flex justify-center items-center gap-3 max-sm:flex-col-reverse max-sm:py-15">
+                <div class="flex flex-col gap-5">
+                    <div class="flex flex-col gap-6">
+                        <h1 class="text-3xl font-medium">
+                            Voluptatem dignissimos provident
+                        </h1>
+                        <span class="border-b-3 border-blue-600 w-[50px]"></span>
+                    </div>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
-                    <p>⭐⭐⭐⭐⭐</p>
-                  </div>
+
+                    <ul class="flex flex-col gap-[1rem]">
+                        <li class="flex gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="w-5 h-5 text-[#0d83fd] shrink-0">
+                                <path
+                                    d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0" />
+                                <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708" />
+                            </svg>
+                            Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </li>
+                        <li class="flex gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="w-5 h-5 text-[#0d83fd] shrink-0">
+                                <path
+                                    d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0" />
+                                <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708" />
+                            </svg>
+                            Duis aute irure dolor in reprehenderit in voluptate velit.
+                        </li>
+                        <li class="flex gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="w-5 h-5 text-[#0d83fd] shrink-0">
+                                <path
+                                    d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0" />
+                                <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708" />
+                            </svg>
+                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                            aute irure dolor in reprehenderit in voluptate trideta
+                            storacalaperda mastiro dolore eu fugiat nulla pariatur.
+                        </li>
+                    </ul>
                 </div>
-                <div>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa
-                  multos export minim fugiat minim velit minim dolor enim duis
-                  veniam ipsum anim magna sunt elit fore quem dolore labore
-                  illum veniam.
+
+                <div class="max-sm:w-full">
+                    <img src="./public/images/img-3.png" alt="" />
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="flex items-center justify-center gap-60 py-20 bg-white w-full"
-        >
-          <div class="w-fit flex flex-col items-center justify-center gap-5">
-            <p class="font-bold text-5xl text-[#2d465e]">232</p>
-            <p class=""></p>
-            <p>Clients</p>
-          </div>
-          <div class="w-fit flex flex-col items-center justify-center gap-5">
-            <p class="font-bold text-5xl text-[#2d465e]">521</p>
-            <p class=""></p>
-            <p>projects</p>
-          </div>
-          <div class="w-fit flex flex-col items-center justify-center gap-5">
-            <p class="font-bold text-5xl text-[#2d465e]">1453</p>
-            <p class=""></p>
-            <p>Hours Of Support</p>
-          </div>
-          <div class="w-fit flex flex-col items-center justify-center gap-5">
-            <p class="font-bold text-5xl text-[#2d465e]">32</p>
-            <p class=""></p>
-            <p>Workers</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- services -->
-      <section class="px-30 max-sm:px-4 bg-blue-50">
-        <div class="flex flex-col py-[3rem] gap-[2rem] items-center">
-          <div
-            class="flex justify-center items-center p-[2rem] w-[50px] border-blue-500 border-b-4"
-          >
-            <h1 class="text-4xl">Services</h1>
-          </div>
-          <div class="flex justify-center items-center">
-            <p>
-              Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-              consectetur velit
-            </p>
-          </div>
-        </div>
-
-        <div class="flex gap-[3rem] max-sm:flex-col">
-          <div
-            class="flex hover:shadow-2xl flex-1 bg-white rounded-2xl p-[3rem] justify-cente gap-[1rem]"
-          >
-            <div class="w-fit rounded-[4px] h-fit p-2 bg-[#e1efff]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                class="w-7 h-7 text-[#0d83fd]"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2"
-                />
-              </svg>
             </div>
 
-            <div class="flex flex-col gap-4">
-              <h2 class="font-medium text-2xl">Nesciunt Mete</h2>
-              <p>
-                Provident nihil minus qui consequatur non omnis maiores. Eos
-                accusantium minus dolores iure perferendis tempore et
-                consequatur.
-              </p>
-              <a
-                class="font-medium flex gap-2 items-center text-[#4aa9fe]"
-                href=""
-                >Read More
-                <span
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    fill="currentColor"
-                    class="w-4 h-4"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-                    /></svg></span
-              ></a>
-            </div>
-          </div>
+            <div class="pt-[7rem] flex gap-[2rem] justify-center px-30 items-center max-sm:px-4 max-sm:flex-col">
+                <div class="bg-[#fff3e2] rounded-2xl flex flex-col gap-[1rem] p-[2rem]">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="w-10 h-10 text-[#edb86e]">
+                        <path
+                            d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702z" />
+                        <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z" />
+                    </svg>
+                    <span class="font-bold">Corporis voluptates</span>
 
-          <div
-            class="flex flex-1 hover:shadow-2xl bg-white rounded-2xl p-[3rem] justify-cente gap-[1rem]"
-          >
-            <div class="w-fit rounded-[4px] h-fit p-2 bg-[#e1efff]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                class="w-7 h-7 text-[#0d83fd]"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5zM0 11.5A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"
-                />
-              </svg>
+                    <p>
+                        Consequuntur sunt aut quasi enim aliquam quae harum pariatur
+                        laboris nisi ut aliquip
+                    </p>
+                </div>
+
+                <div class="bg-[#deedfd] flex flex-col rounded-2xl gap-[1rem] p-[2rem]">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="w-10 h-10 text-[#20a5f8]">
+                        <path fill-rule="evenodd"
+                            d="M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708 0" />
+                        <path
+                            d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911z" />
+                    </svg>
+                    <span class="font-bold">Corporis voluptates</span>
+
+                    <p>
+                        Consequuntur sunt aut quasi enim aliquam quae harum pariatur
+                        laboris nisi ut aliquip
+                    </p>
+                </div>
+
+                <div class="bg-[#d5f1e4] flex flex-col rounded-2xl gap-[1rem] p-[2rem]">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="w-10 h-10 text-[#48c88a]">
+                        <path
+                            d="M7.646 1.146a.5.5 0 0 1 .708 0l1.5 1.5a.5.5 0 0 1-.708.708L8.5 2.707V4.5a.5.5 0 0 1-1 0V2.707l-.646.647a.5.5 0 1 1-.708-.708zM2.343 4.343a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707m11.314 0a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0M8 7a3 3 0 0 1 2.599 4.5H5.4A3 3 0 0 1 8 7m3.71 4.5a4 4 0 1 0-7.418 0H.499a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10m13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5" />
+                    </svg>
+                    <span class="font-bold">Corporis voluptates</span>
+
+                    <p>
+                        Consequuntur sunt aut quasi enim aliquam quae harum pariatur
+                        laboris nisi ut aliquip
+                    </p>
+                </div>
+
+                <div class="bg-[#fdeded] flex rounded-2xl flex-col gap-[1rem] p-[2rem]">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="w-10 h-10 text-[#f28482]">
+                        <path
+                            d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56" />
+                        <path
+                            d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
+                    </svg>
+                    <span class="font-bold">Corporis voluptates</span>
+
+                    <p>
+                        Consequuntur sunt aut quasi enim aliquam quae harum pariatur
+                        laboris nisi ut aliquip
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- phone-section -->
+        <section class="flex gap-12 lg:justify-center py-8 px-30 lg:items-center max-sm:flex-col max-sm:px-4 bg-white">
+            <!-- div-parent-1 -->
+            <div class="flex lg:flex-col lg:gap-6 lg:justify-center max-sm:flex-col max-sm:gap-8">
+                <!-- div1 -->
+                <div
+                    class="flex text-right justify-center items-center gap-10 max-sm:flex-col-reverse max-sm:text-center max-sm:gap-4">
+                    <div>
+                        <h1 class="text-[#446082] text-2xl">Use On Any Device</h1>
+                        <p class="text-[gray] text-lg">
+                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                            posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-[50%] bg-[#e1efff] flex items-center justify-center shrink-0">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="#3785eb"
+                            viewBox="0 0 256 256">
+                            <path
+                                d="M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8Zm-48,48a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,224Z">
+                            </path>
+                        </svg>
+
+                    </div>
+                </div>
+
+                <!-- div2 -->
+                <div
+                    class="flex text-right justify-center items-center gap-10 max-sm:flex-col-reverse max-sm:text-center max-sm:gap-4">
+                    <div class="text-right max-sm:text-center">
+                        <h1 class="text-[#446082] text-2xl">Feather Icons</h1>
+                        <p class="text-[gray] text-lg">
+                            Phasellus ullamcorper ipsum rutrum nunc nunc nonummy metus
+                            vestibulum volutpat sapien arcu sed augue aliquam erat volutpat.
+                        </p>
+                    </div>
+                    <div class="w-15 h-15 bg-[#e1efff] rounded-full shrink-0">
+                        <span class="p-4 rounded-[50%] bg-[#e1efff] flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3785eb"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M221.28,34.75a64,64,0,0,0-90.49,0L60.69,104A15.9,15.9,0,0,0,56,115.31v73.38L26.34,218.34a8,8,0,0,0,11.32,11.32L67.32,200H140.7A15.92,15.92,0,0,0,152,195.32l0,0,69.23-70A64,64,0,0,0,221.28,34.75ZM142.07,46.06A48,48,0,0,1,211.79,112H155.33l34.35-34.34a8,8,0,0,0-11.32-11.32L120,124.69V67.87ZM72,115.35l32-31.67v57l-32,32ZM140.7,184H83.32l56-56h56.74Z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- div3 -->
+                <div
+                    class="flex text-right justify-center items-center gap-10 max-sm:flex-col-reverse max-sm:text-center max-sm:gap-4">
+                    <div class="text-right max-sm:text-center">
+                        <h1 class="text-[#446082] text-2xl">Retina Ready</h1>
+                        <p class="text-[gray] text-lg">
+                            Aenean tellus metus bibendum sed posuere ac mattis non nunc
+                            vestibulum fringilla purus sit amet fermentum aenean commodo.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-[50%] bg-[#e1efff] flex items-center justify-center shrink-0">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3785eb"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
             </div>
 
-            <div class="flex flex-col gap-4">
-              <h2 class="font-medium text-2xl">Eosle Commodi</h2>
-              <p>
-                Ut autem aut autem non a. Sint sint sit facilis nam iusto sint.
-                Libero corrupti neque eum hic non ut nesciunt dolorem.
-              </p>
-              <a
-                class="font-medium flex gap-2 items-center text-[#4aa9fe]"
-                href=""
-                >Read More
-                <span
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    fill="currentColor"
-                    class="w-4 h-4"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-                    /></svg></span
-              ></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex py-[2rem] gap-[3rem] max-sm:flex-col">
-          <div
-            class="flex flex-1 hover:shadow-2xl bg-white rounded-2xl p-[3rem] justify-cente gap-[1rem]"
-          >
-            <div class="w-fit rounded-[4px] h-fit p-2 bg-[#e1efff]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                class="w-7 h-7 text-[#0d83fd]"
-              >
-                <path
-                  d="M8 0a.5.5 0 0 1 .473.337L9.046 2H14a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1.85l1.323 3.837a.5.5 0 1 1-.946.326L11.092 11H8.5v3a.5.5 0 0 1-1 0v-3H4.908l-1.435 4.163a.5.5 0 1 1-.946-.326L3.85 11H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4.954L7.527.337A.5.5 0 0 1 8 0M2 3v7h12V3z"
-                />
-              </svg>
+            <!-- div-parent-2 -->
+            <div class="max-sm:flex max-sm:justify-center">
+                <img src="./public/images/phone-app-screen.webp" alt="" class="max-sm:w-[250px]" />
             </div>
 
-            <div class="flex flex-col gap-4">
-              <h2 class="font-medium text-2xl">Ledo Markt</h2>
-              <p>
-                Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus
-                ea aut. Vel qui id voluptas adipisci eos earum corrupti.
-              </p>
-              <a
-                class="font-medium flex gap-2 items-center text-[#4aa9fe]"
-                href=""
-                >Read More
-                <span
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    fill="currentColor"
-                    class="w-4 h-4"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-                    /></svg></span
-              ></a>
-            </div>
-          </div>
+            <!-- div-parent-3 -->
+            <div class="flex lg:flex-col lg:items-end lg:gap-8 lg:justify-center max-sm:flex-col max-sm:gap-8">
+                <!-- div1 -->
+                <div class="flex justify-center items-center gap-10 max-sm:flex-col max-sm:text-center max-sm:gap-4">
+                    <div class="p-4 rounded-[50%] bg-[#e1efff] flex items-center justify-center shrink-0">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3785eb"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M181.66,146.34a8,8,0,0,1,0,11.32l-24,24a8,8,0,0,1-11.32-11.32L164.69,152l-18.35-18.34a8,8,0,0,1,11.32-11.32Zm-72-24a8,8,0,0,0-11.32,0l-24,24a8,8,0,0,0,0,11.32l24,24a8,8,0,0,0,11.32-11.32L91.31,152l18.35-18.34A8,8,0,0,0,109.66,122.34ZM216,88V216a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88Zm-56-8h28.69L160,51.31Zm40,136V96H152a8,8,0,0,1-8-8V40H56V216H200Z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="">
+                        <h1 class="text-[#446082] text-2xl">Use On Any Device</h1>
+                        <p class="text-[gray] text-lg">
+                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                            posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
+                        </p>
+                    </div>
+                </div>
 
-          <div
-            class="flex flex-1 hover:shadow-2xl bg-white rounded-2xl p-[3rem] justify-cente gap-[1rem]"
-          >
-            <div class="w-fit rounded-[4px] h-fit p-2 bg-[#e1efff]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                class="w-7 h-7 text-[#0d83fd]"
-              >
-                <path
-                  d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0z"
-                />
-                <path
-                  d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"
-                />
-                <path
-                  d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"
-                />
-              </svg>
-            </div>
+                <!-- div2 -->
+                <div class="flex justify-center items-center gap-10 max-sm:flex-col max-sm:text-center max-sm:gap-4">
+                    <div class="p-4 rounded-[50%] bg-[#e1efff] flex items-center justify-center shrink-0">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3785eb"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16Zm8,200a8,8,0,0,1-8,8H80a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96a8,8,0,0,1,8,8ZM140,60a12,12,0,1,1-12-12A12,12,0,0,1,140,60Z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+                    <div>
+                        <h1 class="text-[#446082] text-2xl">Feather Icons</h1>
+                        <p class="text-[gray] text-lg">
+                            Phasellus ullamcorper ipsum rutrum nunc nunc nonummy metus
+                            vestibulum volutpat sapien arcu sed augue aliquam erat volutpat.
+                        </p>
+                    </div>
+                </div>
 
-            <div class="flex flex-col hover: gap-4">
-              <h2 class="font-medium text-2xl">Eosle Commodi</h2>
-              <p>
-                Ut autem aut autem non a. Sint sint sit facilis nam iusto sint.
-                Libero corrupti neque eum hic non ut nesciunt dolorem.
-              </p>
-              <a
-                class="font-medium flex gap-2 items-center text-[#4aa9fe]"
-                href=""
-                >Read More
-                <span
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    fill="currentColor"
-                    class="w-4 h-4"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-                    /></svg></span
-              ></a>
+                <!-- div3 -->
+                <div class="flex justify-center items-center gap-10 max-sm:flex-col max-sm:text-center max-sm:gap-4">
+                    <div class="p-4 rounded-[50%] bg-[#e1efff] flex items-center justify-center shrink-0">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3785eb"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,16a88,88,0,0,1,73.72,40H128a48.08,48.08,0,0,0-45.6,33l-23.08-40A87.89,87.89,0,0,1,128,40Zm32,88a32,32,0,1,1-32-32A32,32,0,0,1,160,128ZM40,128a87.44,87.44,0,0,1,9.56-39.86L86.43,152c.06.1.13.19.19.28A48,48,0,0,0,137.82,175l-23.1,40A88.14,88.14,0,0,1,40,128Zm92.69,87.87L169.57,152c.08-.14.14-.28.22-.42a47.88,47.88,0,0,0-6-55.58H210a88,88,0,0,1-77.29,119.87Z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+                    <div>
+                        <h1 class="text-[#446082] text-2xl">Retina Ready</h1>
+                        <p class="text-[gray] text-lg">
+                            Aenean tellus metus bibendum sed posuere ac mattis non nunc
+                            vestibulum fringilla purus sit amet fermentum aenean commodo.
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- pricing-section -->
-      <section class="flex flex-col items-center gap-16 py-12">
-        <div class="space-y-2 text-center">
-          <h1 class="text-[#446082] text-4xl pb-2">Pricing</h1>
-          <div class="flex items-center justify-center">
-            <span class="border-b-2 border-[#0D83FD] w-8"></span>
-          </div>
-          <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
-          </p>
-        </div>
-        <div class="flex gap-4">
-          <!-- div1 -->
-          <div
-            class="flex flex-col w-full gap-6 bg-[#FFFFFF] rounded-2xl p-4 h-fit pb-22"
-          >
-            <p class="text-[#536D8E] text-xl">Basic Plan</p>
-            <div class="flex items-baseline text-slate-800">
-              <span
-                class="text-lg font-medium text-slate-700 self-start mt-1 mr-0.5"
-                >$</span
-              >
-              <span class="text-5xl font-bold tracking-tight leading-none"
-                >9.9</span
-              >
-              <span
-                class="text-sm font-normal text-gray-400 self-end ml-1.5 mb-0.5"
-                >/ month</span
-              >
-            </div>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit <br />
-              voluptatem accusantium doloremque laudantium <br />
-              totam
-            </p>
-            <div class="space-y-3">
-              <h2>Featured Included:</h2>
-              <div class="flex items-center gap-2">
-                <span
-                  class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="white"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path></svg></span>
-                <p>Duis aute irure dolor</p>
-              </div>
-              <div class="flex items-center gap-2">
-                <span
-                  class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="white"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path></svg></span>
-
-                <p>Excepteur sint occaecat</p>
-              </div>
-              <div class="flex items-center gap-2">
-                <span
-                  class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="white"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path></svg></span>
-
-                <p>Nemo enim ipsam voluptatem</p>
-              </div>
-            </div>
+        </section>
+        <!-- blue-section -->
+        <section class="flex flex-col justify-center items-center p-20 bg-white max-sm:p-4">
             <div
-              class="flex items-center justify-center bg-[#0D83FD] text-[white] py-1.5 px-8 rounded-full gap-2"
-            >
-              <a href="">Buy Now</a>
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="white"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
-                  ></path></svg></span>
+                class="text-[white] bg-[#0D83FD] text-center space-y-8 px-60 py-15 rounded max-sm:px-6 max-sm:py-10 max-sm:w-full max-sm:rounded-2xl">
+                <h1 class="text-5xl font-light max-sm:text-3xl">
+                    Maecenas tempus tellus eget <br class="max-sm:hidden">
+                    condimentum
+                </h1>
+                <p>
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
+                    neque, auctor sit <br class="max-sm:hidden">
+                    amet aliquam vel
+                </p>
+                <a href="" class="inline-block border border-[white] px-4 py-2 rounded-full bg-[#3195FD]">
+                    Call To Action</a>
             </div>
-          </div>
-          <!-- div2 -->
-          <div
-            class="flex flex-col w-full gap-6 bg-[#0D83FD] text-[white] rounded-2xl p-4 pb-8 h-fit relative"
-          >
-            <p
-              class="text-center bg-[white] px-4 py-2 rounded-full text-[#0D83FD] w-fit absolute top-[-5%] left-30"
-            >
-              Most Popular
-            </p>
-            <p class="text-white">standard Plan</p>
-            <div class="flex items-baseline text-[white]">
-              <span
-                class="text-lg font-medium text-white self-start mt-1 mr-0.5"
-                >$</span
-              >
-              <span class="text-5xl font-bold tracking-tight leading-none"
-                >19.9</span
-              >
-              <span
-                class="text-sm font-normal text-white self-end ml-1.5 mb-0.5"
-                >/ month</span
-              >
+        </section>
+        <!-- scroll section -->
+        <section class="overflow-hidden w-full py-10 bg-white">
+            <div class="flex w-max animate-scroll gap-16">
+                <div class="min-w-64 ">
+                    <img src="./public/images/bilimo-logo.png" alt="" width="85">
+                </div>
+                <div class="min-w-64 ">
+                    <img src="./public/images/citros-logo.png" alt="" width="85">
+                </div>
+                <div class="min-w-64 ">
+                    <img src="./public/images/grabyo-logo.png" alt="" width="85">
+                </div>
+                <div class="min-w-64 ">
+                    <img src="./public/images/client-2.png" alt="" width="85">
+                </div>
+                <div class="min-w-64 ">
+                    <img src="./public/images/life-groupes-logo.png" alt="" width="85">
+                </div>
+                <div class="min-w-64 ">
+                    <img src="./public/images/lilly-logo.png" alt="" width="85">
+                </div>
+                <div class="min-w-64 ">
+                    <img src="./public/images/myob-logo.png" alt="" width="85">
+                </div>
+                <div class="min-w-64 ">
+                    <img src="./public/images/olden-logo.png" alt="" width="85px" height="85px">
+                </div>
             </div>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit <br />
-              voluptatem accusantium doloremque laudantium <br />
-              totam
-            </p>
-            <div class="space-y-5">
-              <h2>Featured Included:</h2>
-              <div class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-full bg-[white] flex items-center"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="#0D83FD"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path></svg></span>
-                <p>Duis aute irure dolor</p>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-full bg-[white] flex items-center"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="#0D83FD"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path></svg></span>
+        </section>
+        <!-- Testimonials -->
+        <section class="flex justify-center items-center flex-col gap-15 bg-blue-50 h-fit py-15 ">
+            <div class="flex flex-col  items-center justify-center gap-15 max-lg:px-30 max-sm:px-4 ">
+                <div class="flex flex-col items-center gap-5 max-sm:text-center">
+                    <div class="flex items-center justify-center border-b-4 pb-8 border-[#0d83fd] w-[50px]">
+                        <p class="text-[#2d465e] w-fit text-4xl font-semibold">
+                            Testimonials
+                        </p>
+                    </div>
+                    <p>
+                        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+                        consectetur velit
+                    </p>
+                </div>
+                <div class="flex flex-col gap-10">
+                    <div class="flex max-sm:flex-col justify-between gap-10">
+                        <div class="flex flex-1 flex-col gap-4 p-5 bg-white shadow-xl w-fit ">
+                            <div class="flex items-center gap-4">
+                                <div>
+                                    <img class="rounded-[50%] outline-[#f3f9ff] outline-4"
+                                        src="./public/images/testimonials-1.jpg" width="90px" alt="" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <p class="text-[#2d465e] font-medium">SaulGoodman</p>
+                                    <p class="text-[darkgray] text-lg font-medium">
+                                        Ceo & Founder
+                                    </p>
+                                    <p>⭐⭐⭐⭐⭐</p>
+                                </div>
+                            </div>
+                            <div>
+                                Proin iaculis purus consequat sem cure digni ssim donec
+                                porttitora entum suscipit rhoncus. Accusantium quam, ultricies
+                                eget id, aliquam eget nibh et. Maecen aliquam, risus at
+                                semper.
+                            </div>
+                        </div>
+                        <div class="flex flex-1 flex-col gap-4 p-5 bg-white shadow-xl w-fit">
+                            <div class="flex items-center gap-4">
+                                <div>
+                                    <img class="rounded-[50%] outline-[#f3f9ff] outline-4"
+                                        src="./public/images/testimonials-2.jpg" width="90px" alt="" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <p class="text-[#2d465e] font-medium">Sara Wilsson</p>
+                                    <p class="text-[darkgray] text-lg font-medium">Designer</p>
+                                    <p>⭐⭐⭐⭐⭐</p>
+                                </div>
+                            </div>
+                            <div>
+                                Export tempor illum tamen malis malis eram quae irure esse
+                                labore quem cillum quid cillum eram malis quorum velit fore
+                                eram velit sunt aliqua noster fugiat irure amet legam anim
+                                culpa.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex max-sm:flex-col justify-between gap-10">
+                        <div class="flex flex-1 flex-col gap-4 p-5 bg-white shadow-xl w-fit">
+                            <div class="flex items-center gap-4">
+                                <div>
+                                    <img class="rounded-[50%] outline-[#f3f9ff] outline-4"
+                                        src="./public/images/testimonials-3.jpg" width="90px" alt="" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <p class="text-[#2d465e] font-medium">Jena Karlis</p>
+                                    <p class="text-[darkgray] text-lg font-medium">
+                                        Store Owner
+                                    </p>
+                                    <p>⭐⭐⭐⭐⭐</p>
+                                </div>
+                            </div>
+                            <div>
+                                Enim nisi quem export duis labore cillum quae magna enim sint
+                                quorum nulla quem veniam duis minim tempor labore quem eram
+                                duis noster aute amet eram fore quis sint minim.
+                            </div>
+                        </div>
+                        <div class="flex flex-1 flex-col gap-4 p-5 bg-white shadow-xl w-fit">
+                            <div class="flex items-center gap-4">
+                                <div>
+                                    <img class="rounded-[50%] outline-[#f3f9ff] outline-4"
+                                        src="./public/images/testimonials-4.jpg" width="90px" alt="" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <p class="text-[#2d465e] font-medium">Matt Brandon</p>
+                                    <p class="text-[darkgray] text-lg font-medium">
+                                        Freelancer
+                                    </p>
+                                    <p>⭐⭐⭐⭐⭐</p>
+                                </div>
+                            </div>
+                            <div>
+                                Fugiat enim eram quae cillum dolore dolor amet nulla culpa
+                                multos export minim fugiat minim velit minim dolor enim duis
+                                veniam ipsum anim magna sunt elit fore quem dolore labore
+                                illum veniam.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <p>Excepteur sint occaecat</p>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-full bg-[white] flex items-center"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="#0D83FD"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path></svg></span>
+            <div class="flex items-center justify-center gap-60 py-20 bg-white w-full max-sm:flex-col max-sm:gap-25">
+                <div class="w-fit flex flex-col items-center justify-center gap-5">
+                    <p class="font-bold text-5xl text-[#2d465e]">232</p>
+                    <p class=""></p>
+                    <p>Clients</p>
+                </div>
+                <div class="w-fit flex flex-col items-center justify-center gap-5">
+                    <p class="font-bold text-5xl text-[#2d465e]">521</p>
+                    <p class=""></p>
+                    <p>projects</p>
+                </div>
+                <div class="w-fit flex flex-col items-center justify-center gap-5">
+                    <p class="font-bold text-5xl text-[#2d465e]">1453</p>
+                    <p class=""></p>
+                    <p>Hours Of Support</p>
+                </div>
+                <div class="w-fit flex flex-col items-center justify-center gap-5">
+                    <p class="font-bold text-5xl text-[#2d465e]">32</p>
+                    <p class=""></p>
+                    <p>Workers</p>
+                </div>
+            </div>
+        </section>
+        <!-- services -->
+        <section class="px-30 bg-blue-50 max-sm:px-4">
+            <div class="flex flex-col py-[3rem] gap-[2rem] items-center">
+                <div class="flex justify-center items-center p-[2rem] w-[50px] border-blue-500 border-b-4">
+                    <h1 class="text-4xl">Services</h1>
+                </div>
+                <div class="flex justify-center items-center max-sm:text-center">
+                    <p>
+                        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+                        consectetur velit
+                    </p>
+                </div>
+            </div>
 
-                <p>Nemo enim ipsam voluptatem</p>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-full bg-[white] flex items-center"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="#0D83FD"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path></svg></span>
+            <div class="flex gap-[3rem] max-sm:flex-col max-sm:gap-6">
+                <div class="flex hover:shadow-2xl flex-1 bg-white rounded-2xl p-[3rem] justify-cente gap-[1rem] max-sm:p-6">
+                    <div class="w-fit rounded-[4px] h-fit p-2 bg-[#e1efff] shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="w-7 h-7 text-[#0d83fd]">
+                            <path fill-rule="evenodd"
+                                d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2" />
+                        </svg>
+                    </div>
 
-                <p>Nemo enim ipsam voluptatem</p>
-              </div>
-            </div>
-            <div
-              class="flex items-center justify-center bg-[white] text-[#0D83FD] py-1.5 px-8 rounded-full gap-2"
-            >
-              <a href="">Buy Now</a>
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="#0D83FD"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
-                  ></path></svg></span>
-            </div>
-          </div>
-          <!-- div3 -->
-          <div
-            class="flex flex-col w-full gap-4 bg-[#FFFFFF] rounded-2xl p-4 h-fit"
-          >
-            <p class="text-[#536D8E] text-xl">Basic Plan</p>
-            <div class="flex items-baseline text-slate-800">
-              <span
-                class="text-lg font-medium text-slate-700 self-start mt-1 mr-0.5"
-                >$</span
-              >
-              <span class="text-5xl font-bold tracking-tight leading-none"
-                >39.9</span
-              >
-              <span
-                class="text-sm font-normal text-gray-400 self-end ml-1.5 mb-0.5"
-                >/ month</span
-              >
-            </div>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit <br />
-              voluptatem accusantium doloremque laudantium <br />
-              totam
-            </p>
-            <div class="space-y-5">
-              <h2>Featured Included:</h2>
-              <div class="flex items-center gap-2">
-                <span
-                  class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="white"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path></svg></span>
-                <p>Duis aute irure dolor</p>
-              </div>
-              <div class="flex items-center gap-2">
-                <span
-                  class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="white"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path></svg
-                ></span>
+                    <div class="flex flex-col gap-4">
+                        <h2 class="font-medium text-2xl">Nesciunt Mete</h2>
+                        <p>
+                            Provident nihil minus qui consequatur non omnis maiores. Eos
+                            accusantium minus dolores iure perferendis tempore et
+                            consequatur.
+                        </p>
+                        <a class="font-medium flex gap-2 items-center text-[#4aa9fe]" href="">Read More
+                            <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                    class="w-4 h-4">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span></a>
+                    </div>
+                </div>
 
-                <p>Excepteur sint occaecat</p>
-              </div>
-              <div class="flex items-center gap-2">
-                <span
-                  class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="white"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path></svg
-                ></span>
+                <div class="flex flex-1 hover:shadow-2xl bg-white rounded-2xl p-[3rem] justify-cente gap-[1rem] max-sm:p-6">
+                    <div class="w-fit rounded-[4px] h-fit p-2 bg-[#e1efff] shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="w-7 h-7 text-[#0d83fd]">
+                            <path fill-rule="evenodd"
+                                d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5zM0 11.5A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                        </svg>
+                    </div>
 
-                <p>Nam libero tempore soluta</p>
-              </div>
-              <div class="flex items-center gap-2">
-                <span
-                  class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="white"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path></svg
-                ></span>
+                    <div class="flex flex-col gap-4">
+                        <h2 class="font-medium text-2xl">Eosle Commodi</h2>
+                        <p>
+                            Ut autem aut autem non a. Sint sint sit facilis nam iusto sint.
+                            Libero corrupti neque eum hic non ut nesciunt dolorem.
+                        </p>
+                        <a class="font-medium flex gap-2 items-center text-[#4aa9fe]" href="">Read More
+                            <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                    class="w-4 h-4">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span></a>
+                    </div>
+                </div>
+            </div>
 
-                <p>Cumque nihil impedit quo</p>
-              </div>
-              <div class="flex items-center gap-2">
-                <span
-                  class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="white"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path></svg
-                ></span>
+            <div class="flex py-[2rem] gap-[3rem] max-sm:flex-col max-sm:gap-6">
+                <div class="flex flex-1 hover:shadow-2xl bg-white rounded-2xl p-[3rem] justify-cente gap-[1rem] max-sm:p-6">
+                    <div class="w-fit rounded-[4px] h-fit p-2 bg-[#e1efff] shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="w-7 h-7 text-[#0d83fd]">
+                            <path
+                                d="M8 0a.5.5 0 0 1 .473.337L9.046 2H14a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1.85l1.323 3.837a.5.5 0 1 1-.946.326L11.092 11H8.5v3a.5.5 0 0 1-1 0v-3H4.908l-1.435 4.163a.5.5 0 1 1-.946-.326L3.85 11H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4.954L7.527.337A.5.5 0 0 1 8 0M2 3v7h12V3z" />
+                        </svg>
+                    </div>
 
-                <p>Maxime placeat facere possimus</p>
-              </div>
+                    <div class="flex flex-col gap-4">
+                        <h2 class="font-medium text-2xl">Ledo Markt</h2>
+                        <p>
+                            Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus
+                            ea aut. Vel qui id voluptas adipisci eos earum corrupti.
+                        </p>
+                        <a class="font-medium flex gap-2 items-center text-[#4aa9fe]" href="">Read More
+                            <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                    class="w-4 h-4">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span></a>
+                    </div>
+                </div>
+
+                <div class="flex flex-1 hover:shadow-2xl bg-white rounded-2xl p-[3rem] justify-cente gap-[1rem] max-sm:p-6">
+                    <div class="w-fit rounded-[4px] h-fit p-2 bg-[#e1efff] shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="w-7 h-7 text-[#0d83fd]">
+                            <path
+                                d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0z" />
+                            <path
+                                d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z" />
+                            <path
+                                d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z" />
+                        </svg>
+                    </div>
+
+                    <div class="flex flex-col hover: gap-4">
+                        <h2 class="font-medium text-2xl">Eosle Commodi</h2>
+                        <p>
+                            Ut autem aut autem non a. Sint sint sit facilis nam iusto sint.
+                            Libero corrupti neque eum hic non ut nesciunt dolorem.
+                        </p>
+                        <a class="font-medium flex gap-2 items-center text-[#4aa9fe]" href="">Read More
+                            <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                    class="w-4 h-4">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span></a>
+                    </div>
+                </div>
             </div>
-            <div
-              class="flex items-center justify-center bg-[#0D83FD] text-[white] py-1.5 px-8 rounded-full gap-2"
-            >
-              <a href="">Buy Now</a>
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="white"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
-                  ></path></svg
-              ></span>
+        </section>
+        <!-- pricing-section -->
+        <section class="flex flex-col items-center gap-16 py-12 max-sm:px-4">
+            <div class="space-y-2 text-center">
+                <h1 class="text-[#446082] text-4xl  pb-2 ">
+
+                    Pricing
+                </h1>
+                <div class="flex items-center justify-center">
+                    <span class="border-b-2 border-[#0D83FD] w-8 "></span>
+                </div>
+                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
             </div>
-          </div>
-        </div>
-      </section>
-      <!-- quetion-section -->
-      <section class="flex justify-center mt-25 gap-16">
-        <!-- div1 -->
-        <div class="space-y-4">
-          <h1 class="font-bold text-2xl text-[#2B445C]">
-            Have a question? Check out <br />
-            the FAQ
-          </h1>
-          <p>
-            Maecenas tempus tellus eget condimentum rhoncus sem quam semper
-            <br />
-            libero sit amet adipiscing sem neque sed ipsum. <br />
-          </p>
-          <img
-            src="./public/images/fleche-image.png"
-            alt=""
-            width="300px"
-            height="300px"
-          />
-        </div>
-        <!-- div2 -->
-        <div class="flex flex-col gap-6">
-          <div class="bg-[#FFFFFF] w-full p-4 rounded">
-            <h2 class="text-[#0D83FD]">
-              Non consectetur a erat nam at lectus urna duis?
-            </h2>
-            <div class="flex justify-between">
-              <p class="">
-                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id
-                volutpat lacus laoreet non curabitur <br />
-                gravida. Venenatis lectus magna fringilla urna porttitor rhoncus
-                dolor purus non.
-              </p>
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="#b8babc"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
-                  ></path>
-                </svg>
-              </span>
+            <div class="flex gap-4 max-sm:flex-col max-sm:gap-10 max-sm:w-full">
+                <!-- div1 -->
+                <div class="flex flex-col w-full gap-6 bg-[#FFFFFF] rounded-2xl p-4 h-fit pb-22 max-sm:pb-8">
+                    <p class="text-[#536D8E] text-xl">Basic Plan</p>
+                    <div class="flex items-baseline text-slate-800">
+                        <span class="text-lg font-medium text-slate-700 self-start mt-1 mr-0.5">$</span>
+                        <span class="text-5xl font-bold tracking-tight leading-none">9.9</span>
+                        <span class="text-sm font-normal text-gray-400 self-end ml-1.5 mb-0.5">/ month</span>
+                    </div>
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit <br class="max-sm:hidden">
+                        voluptatem accusantium doloremque laudantium <br class="max-sm:hidden">
+                        totam
+                    </p>
+                    <div class="space-y-3">
+                        <h2>Featured Included:</h2>
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center "><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                                    </path>
+                                </svg></span>
+                            <p>Duis aute irure dolor</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center "><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                                    </path>
+                                </svg></span>
+
+                            <p>Excepteur sint occaecat</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center "><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                                    </path>
+                                </svg></span>
+
+                            <p>Nemo enim ipsam voluptatem</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center justify-center  bg-[#0D83FD] text-[white] py-1.5 px-8 rounded-full gap-2">
+                        <a href="">Buy Now</a> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="white" viewBox="0 0 256 256">
+                                <path
+                                    d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z">
+                                </path>
+                            </svg></span>
+                    </div>
+                </div>
+                <!-- div2 -->
+                <div class="flex flex-col w-full gap-6 bg-[#0D83FD] text-[white] rounded-2xl p-4 pb-8 h-fit relative max-sm:pt-8">
+                    <p
+                        class="text-center bg-[white] px-4 py-2 rounded-full text-[#0D83FD] w-fit absolute top-[-5%] left-30 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:-top-4">
+                        Most Popular</p>
+                    <p class="text-white ">standard Plan</p>
+                    <div class="flex items-baseline text-[white]">
+                        <span class="text-lg font-medium text-white self-start mt-1 mr-0.5">$</span>
+                        <span class="text-5xl font-bold tracking-tight leading-none">19.9</span>
+                        <span class="text-sm font-normal text-white self-end ml-1.5 mb-0.5">/ month</span>
+                    </div>
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit <br class="max-sm:hidden">
+                        voluptatem accusantium doloremque laudantium <br class="max-sm:hidden">
+                        totam
+                    </p>
+                    <div class="space-y-5">
+                        <h2>Featured Included:</h2>
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[white] flex items-center "><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#0D83FD"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                                    </path>
+                                </svg></span>
+                            <p>Duis aute irure dolor</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[white] flex items-center "><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#0D83FD"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                                    </path>
+                                </svg></span>
+
+                            <p>Excepteur sint occaecat</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[white] flex items-center "><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#0D83FD"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                                    </path>
+                                </svg></span>
+
+                            <p>Nemo enim ipsam voluptatem</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[white] flex items-center "><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#0D83FD"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                                    </path>
+                                </svg></span>
+
+                            <p>Nemo enim ipsam voluptatem</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center justify-center  bg-[white] text-[#0D83FD] py-1.5 px-8 rounded-full gap-2">
+                        <a href="">Buy Now</a> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="#0D83FD" viewBox="0 0 256 256">
+                                <path
+                                    d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z">
+                                </path>
+                            </svg></span>
+                    </div>
+                </div>
+                <!-- div3 -->
+                <div class="flex flex-col w-full gap-4 bg-[#FFFFFF] rounded-2xl p-4 h-fit">
+                    <p class="text-[#536D8E] text-xl">Basic Plan</p>
+                    <div class="flex items-baseline text-slate-800">
+                        <span class="text-lg font-medium text-slate-700 self-start mt-1 mr-0.5">$</span>
+                        <span class="text-5xl font-bold tracking-tight leading-none">39.9</span>
+                        <span class="text-sm font-normal text-gray-400 self-end ml-1.5 mb-0.5">/ month</span>
+                    </div>
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit <br class="max-sm:hidden">
+                        voluptatem accusantium doloremque laudantium <br class="max-sm:hidden">
+                        totam
+                    </p>
+                    <div class="space-y-5">
+                        <h2>Featured Included:</h2>
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center "><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                                    </path>
+                                </svg></span>
+                            <p>Duis aute irure dolor</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center "><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                                    </path>
+                                </svg></span>
+
+                            <p>Excepteur sint occaecat</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center "><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                                    </path>
+                                </svg></span>
+
+                            <p>Nam libero tempore soluta</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center "><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                                    </path>
+                                </svg></span>
+
+                            <p>
+                                Cumque nihil impedit quo</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[#0D83FD] flex items-center "><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                                    viewBox="0 0 256 256">
+                                    <path
+                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                                    </path>
+                                </svg></span>
+
+                            <p>Maxime placeat facere possimus</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center justify-center  bg-[#0D83FD] text-[white] py-1.5 px-8 rounded-full gap-2">
+                        <a href="">Buy Now</a> <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="white" viewBox="0 0 256 256">
+                                <path
+                                    d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z">
+                                </path>
+                            </svg></span>
+                    </div>
+
+                </div>
             </div>
-          </div>
-          <div class="bg-[#FFFFFF] w-full p-4 rounded">
-            <div class="flex justify-between">
-              <p class="text-sm">
-                Feugiat scelerisque varius morbi enim nunc faucibus?
-              </p>
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="#b8babc"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
-                  ></path>
-                </svg>
-              </span>
+        </section>
+        <!-- quetion-section -->
+        <section class="flex justify-center mt-25 gap-16 max-sm:flex-col max-sm:px-4 max-sm:mt-12 max-sm:gap-8">
+            <!-- div1 -->
+            <div class="space-y-4">
+                <h1 class="font-bold text-2xl text-[#2B445C]">
+                    Have a question? Check out <br class="max-sm:hidden">
+                    the FAQ
+                </h1>
+                <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper <br class="max-sm:hidden">
+                    libero sit amet adipiscing sem neque sed ipsum. <br class="max-sm:hidden">
+                </p>
+                <img src="./public/images/fleche-image.png" alt="" width="300px" height="300px"
+                    class="max-sm:mx-auto max-sm:w-[220px]">
+
             </div>
-          </div>
-          <div class="bg-[#FFFFFF] w-full p-4 rounded">
-            <div class="flex justify-between">
-              <p class="text-sm">
-                Dolor sit amet consectetur adipiscing elit pellentesque?
-              </p>
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="#b8babc"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
-                  ></path>
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div class="bg-[#FFFFFF] w-full p-4 rounded">
-            <div class="flex justify-between">
-              <p class="text-sm">
-                Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
-              </p>
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="#b8babc"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
-                  ></path>
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div class="bg-[#FFFFFF] w-full p-4 rounded">
-            <div class="flex justify-between">
-              <p class="text-sm">
-                Tempus quam pellentesque nec nam aliquam sem et tortor?
-              </p>
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="#b8babc"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
-                  ></path>
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div class="bg-[#FFFFFF] w-full p-4 rounded">
-            <div class="flex justify-between">
-              <p class="text-sm">
-                Perspiciatis quod quo quos nulla quo illum ullam?
-              </p>
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="#b8babc"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
-                  ></path>
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- blue-section-2 -->
-      <section
-        class="flex flex-col p-20 text-[white] bg-[#0D83FD] text-center space-y-8 px-60 py-15 rounded w-full mt-14"
-      >
-        <h1 class="text-5xl font-2xl">Call To Action</h1>
-        <p>
-          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-          posuere cubilia Curae; Donec velit neque, auctor sit <br />
-          amet aliquam vel
-        </p>
-        <div class="flex items-center justify-center">
-          <a
-            href=""
-            class="border border-[white] px-4 py-2 rounded-full bg-[#3195FD] w-fit text-center"
-          >
-            Call To Action</a
-          >
-        </div>
-      </section>
-      <!-- contact-section -->
-      <section
-        class="flex flex-col gap-15 justify-center w-full items-center px-30 py-15"
-      >
-        <div class="flex flex-col items-center gap-5">
-          <div
-            class="flex items-center justify-center border-b-4 pb-8 border-[#0d83fd] w-[50px]"
-          >
-            <p class="text-[#2d465e] w-fit text-4xl font-semibold">Contact</p>
-          </div>
-          <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
-          </p>
-        </div>
-        <div class="flex items-center gap-15">
-          <div
-            class="flex flex-col gap-6 px-10 py-12 w-[45%] h-[90vh] bg-[#0d83fd] rounded-2xl"
-          >
+            <!-- div2 -->
             <div class="flex flex-col gap-6">
-              <p class="text-white text-4xl">Contact Info</p>
-              <p class="text-[#cfe6ff]">
-                Praesent sapien massa, convallis a pellentesque nec, egestas non
-                nisi. Vestibulum ante ipsum primis.
-              </p>
+                <div class="bg-[#FFFFFF] w-full p-4 rounded ">
+                    <h2 class="text-[#0D83FD]">Non consectetur a erat nam at lectus urna duis?</h2>
+                    <div class="flex justify-between gap-2">
+                        <p class="">
+                            Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus
+                            laoreet non
+                            curabitur <br class="max-sm:hidden">
+                            gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus
+                            non.
+                        </p>
+                        <span class="shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#b8babc"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="bg-[#FFFFFF] w-full p-4 rounded ">
+                    <div class="flex justify-between gap-2">
+                        <p class="text-sm">
+                            Feugiat scelerisque varius morbi enim nunc faucibus?
+                        </p>
+                        <span class="shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#b8babc"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="bg-[#FFFFFF] w-full p-4 rounded ">
+                    <div class="flex justify-between gap-2">
+                        <p class="text-sm">
+                            Dolor sit amet consectetur adipiscing elit pellentesque?
+                        </p>
+                        <span class="shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#b8babc"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="bg-[#FFFFFF] w-full p-4 rounded ">
+                    <div class="flex justify-between gap-2">
+                        <p class="text-sm">
+                            Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
+                        </p>
+                        <span class="shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#b8babc"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="bg-[#FFFFFF] w-full p-4 rounded ">
+                    <div class="flex justify-between gap-2">
+                        <p class="text-sm">
+                            Tempus quam pellentesque nec nam aliquam sem et tortor?
+                        </p>
+                        <span class="shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#b8babc"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="bg-[#FFFFFF] w-full p-4 rounded ">
+                    <div class="flex justify-between gap-2">
+                        <p class="text-sm">
+                            Perspiciatis quod quo quos nulla quo illum ullam?
+                        </p>
+                        <span class="shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#b8babc"
+                                viewBox="0 0 256 256">
+                                <path
+                                    d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class="flex gap-4">
-              <div
-                class="flex items-center justify-center bg-white/25 hover:bg-white/40 rounded-[50%] w-12 h-12"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.5em"
-                  height="1.5em"
-                  viewBox="0 0 16 16"
-                  class="text-white"
-                >
-                  <path d="M0 0h16v16H0z" fill="none" />
-                  <g fill="currentColor">
-                    <path
-                      d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"
-                    />
-                    <path
-                      d="M8 8a2 2 0 1 1 0-4a2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6a3 3 0 0 0 0 6"
-                    />
-                  </g>
-                </svg>
-              </div>
-              <div class="flex flex-col gap-0.5">
-                <p class="font-medium text-lg text-white">Our Location</p>
-                <p class="text-[#cfe6ff]">A108 Adam Street</p>
-                <p class="text-[#cfe6ff] font-medium">New York, NY 535022</p>
-              </div>
-            </div>
-            <div class="flex gap-4">
-              <div
-                class="flex items-center justify-center bg-white/25 hover:bg-white/40 rounded-[50%] w-12 h-12"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.5em"
-                  height="1.5em"
-                  viewBox="0 0 16 16"
-                  class="text-white"
-                >
-                  <path d="M0 0h16v16H0z" fill="none" />
-                  <path
-                    fill="currentColor"
-                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608a17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42a18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
-                  />
-                </svg>
-              </div>
-              <div class="flex flex-col gap-0.5">
-                <p class="font-medium text-lg text-white">Phone Number</p>
-                <p class="text-[#cfe6ff] font-medium">+1 5589 55488 55</p>
-                <p class="text-[#cfe6ff]">+1 6678 254445 41</p>
-              </div>
-            </div>
-            <div class="flex gap-4">
-              <div
-                class="flex items-center justify-center bg-white/25 hover:bg-white/40 rounded-[50%] w-12 h-12"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.5em"
-                  height="1.5em"
-                  viewBox="0 0 16 16"
-                  class="text-white"
-                >
-                  <path d="M0 0h16v16H0z" fill="none" />
-                  <path
-                    fill="currentColor"
-                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2l7-4.2V4a1 1 0 0 0-1-1zm13 2.383l-4.708 2.825L15 11.105zm-.034 6.876l-5.64-3.471L8 9.583l-1.326-.795l-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
-                  />
-                </svg>
-              </div>
-              <div class="flex flex-col gap-0.5">
-                <p class="font-medium text-lg text-white">Email Address</p>
-                <p class="text-[#cfe6ff] font-medium">info@example.com</p>
-                <p class="text-[#cfe6ff]">contact@example.com</p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex flex-col gap-6 px-10 py-12 h-[90vh] bg-white shadow-xl rounded-2xl"
-          >
-            <div class="flex flex-col gap-6">
-              <p class="text-[#2d465e] font-medium text-4xl">Get In Touch</p>
-              <p>
-                Praesent sapien massa, convallis a pellentesque nec, egestas non
-                nisi. Vestibulum ante ipsum primis.
-              </p>
-            </div>
-            <div class="flex gap-5">
-              <input
-                type="text"
-                placeholder="Your Name"
-                class="border-2 border-[gray] rounded-lg p-3 w-full"
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                class="border-2 border-[gray] rounded-lg p-3 w-full"
-              />
-            </div>
-            <div class="">
-              <input
-                type="text"
-                placeholder="Subject"
-                class="border-2 border-[gray] rounded-lg p-3 w-full"
-              />
-            </div>
-            <div>
-              <textarea
-                class="border-2 border-[gray] rounded-lg p-3 w-full"
-                name=""
-                id=""
-                rows="7"
-                placeholder="Message"
-              ></textarea>
-            </div>
+        </section>
+        <!-- blue-section-2 -->
+        <section
+            class="flex flex-col p-20 text-[white] bg-[#0D83FD] text-center space-y-8 px-60 py-15 rounded w-full mt-14 max-sm:px-6 max-sm:py-12">
+
+            <h1 class="text-5xl font-2xl max-sm:text-3xl">
+                Call To Action
+            </h1>
+            <p>
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
+                neque, auctor sit <br class="max-sm:hidden">
+                amet aliquam vel
+            </p>
             <div class="flex items-center justify-center">
-              <button
-                class="bg-[#0d83fd] w-fit px-8 py-4 cursor-pointer hover:bg-[#0d83fd]/85 rounded-4xl text-white font-medium"
-              >
-                Send Message
-              </button>
+                <a href="" class=" border border-[white] px-4 py-2 rounded-full bg-[#3195FD] w-fit text-center">
+                    Call To Action</a>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- footer -->
-      <footer
-        class="flex flex-col justify-between px-30 py-10 bg-white h-fit w-full"
-      >
-        <div class="flex justify-between py-8">
-          <div class="flex flex-col gap-6">
-            <a class="text-[#2d465e] font-medium text-3xl pb-2" href=""
-              >iLanding</a
-            >
-            <div class="flex flex-col gap-3">
-              <div class="flex flex-col gap-1">
-                <p class="font-light">A108 Adam Street</p>
-                <p class="font-light">New York, NY 535022</p>
-              </div>
-              <div class="flex flex-col gap-1">
-                <p class="font-light">
-                  <b class="font-medium">Phone: </b>+1 5589 55488 55
+        </section>
+        <!-- contact-section -->
+        <section class="flex flex-col gap-15 justify-center w-full items-center px-30 py-15 max-sm:px-4">
+            <div class="flex flex-col items-center gap-5 max-sm:text-center">
+                <div class="flex items-center justify-center border-b-4 pb-8 border-[#0d83fd] w-[50px]">
+                    <p class="text-[#2d465e] w-fit text-4xl font-semibold  ">
+                        Contact
+                    </p>
+                </div>
+                <p>
+                    Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
                 </p>
-                <p class="font-light">
-                  <b class="font-medium">Email: </b>info@example.com
-                </p>
-              </div>
             </div>
-            <div class="flex gap-3">
-              <div
-                class="flex items-center justify-center rounded-[50%] border-black/70 hover:border-[#0d83fd] cursor-pointer border w-10 h-10"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  class="text-black/70 hover:text-[#0d83fd]"
-                >
-                  <path d="M0 0h16v16H0z" fill="none" />
-                  <path
-                    fill="currentColor"
-                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07l-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
-                  />
-                </svg>
-              </div>
-              <div
-                class="flex items-center justify-center rounded-[50%] border-black/70 hover:border-[#0d83fd] cursor-pointer border w-10 h-10"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  class="text-black/70 hover:text-[#0d83fd]"
-                >
-                  <path d="M0 0h16v16H0z" fill="none" />
-                  <path
-                    fill="currentColor"
-                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131c.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
-                  />
-                </svg>
-              </div>
-              <div
-                class="flex items-center justify-center rounded-[50%] border-black/70 hover:border-[#0d83fd] cursor-pointer border w-10 h-10"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  class="text-black/70 hover:text-[#0d83fd]"
-                >
-                  <path d="M0 0h16v16H0z" fill="none" />
-                  <path
-                    fill="currentColor"
-                    d="M8 0C5.829 0 5.556.01 4.703.048C3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7C.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297c.04.852.174 1.433.372 1.942c.205.526.478.972.923 1.417c.444.445.89.719 1.416.923c.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417c.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046c.78.035 1.204.166 1.486.275c.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485c.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598c-.28.11-.704.24-1.485.276c-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598a2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485c-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486c.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276c.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92a.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217a4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334a2.667 2.667 0 0 1 0-5.334"
-                  />
-                </svg>
-              </div>
-              <div
-                class="flex items-center justify-center rounded-[50%] border-black/70 hover:border-[#0d83fd] cursor-pointer border w-10 h-10"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  class="text-black/70 hover:text-[#0d83fd]"
-                >
-                  <path d="M0 0h16v16H0z" fill="none" />
-                  <path
-                    fill="currentColor"
-                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248c-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586c.173-.431.568-.878 1.232-.878c.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252c-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
-                  />
-                </svg>
-              </div>
+            <div class="flex items-center gap-15 max-sm:flex-col max-sm:w-full">
+                <div
+                    class="flex flex-col gap-6 px-10 py-12 w-[45%] h-[90vh] bg-[#0d83fd] rounded-2xl max-sm:w-full max-sm:h-fit max-sm:px-6">
+                    <div class="flex flex-col gap-6">
+                        <p class="text-white text-4xl">Contact Info</p>
+                        <p class="text-[#cfe6ff]">Praesent sapien massa, convallis a pellentesque nec, egestas non
+                            nisi.
+                            Vestibulum ante ipsum
+                            primis.</p>
+                    </div>
+                    <div class="flex  gap-4">
+                        <div
+                            class="flex items-center justify-center bg-white/25 hover:bg-white/40 rounded-[50%] w-12 h-12 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 16 16"
+                                class="text-white ">
+                                <path d="M0 0h16v16H0z" fill="none" />
+                                <g fill="currentColor">
+                                    <path
+                                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                                    <path d="M8 8a2 2 0 1 1 0-4a2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6a3 3 0 0 0 0 6" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col gap-0.5">
+                            <p class="font-medium text-lg text-white ">Our Location</p>
+                            <p class="text-[#cfe6ff]">A108 Adam Street</p>
+                            <p class="text-[#cfe6ff] font-medium">New York, NY 535022</p>
+                        </div>
+                    </div>
+                    <div class="flex  gap-4">
+                        <div
+                            class="flex items-center justify-center bg-white/25 hover:bg-white/40 rounded-[50%] w-12 h-12 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 16 16"
+                                class="text-white">
+                                <path d="M0 0h16v16H0z" fill="none" />
+                                <path fill="currentColor"
+                                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608a17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42a18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                            </svg>
+
+                        </div>
+                        <div class="flex flex-col gap-0.5">
+                            <p class="font-medium text-lg text-white ">Phone Number</p>
+                            <p class="text-[#cfe6ff] font-medium">+1 5589 55488 55</p>
+                            <p class="text-[#cfe6ff]">+1 6678 254445 41</p>
+                        </div>
+                    </div>
+                    <div class="flex  gap-4">
+                        <div
+                            class="flex items-center justify-center bg-white/25 hover:bg-white/40 rounded-[50%] w-12 h-12 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 16 16"
+                                class="text-white">
+                                <path d="M0 0h16v16H0z" fill="none" />
+                                <path fill="currentColor"
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2l7-4.2V4a1 1 0 0 0-1-1zm13 2.383l-4.708 2.825L15 11.105zm-.034 6.876l-5.64-3.471L8 9.583l-1.326-.795l-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                            </svg>
+
+                        </div>
+                        <div class="flex flex-col gap-0.5">
+                            <p class="font-medium text-lg text-white ">Email Address</p>
+                            <p class="text-[#cfe6ff] font-medium">info@example.com</p>
+                            <p class="text-[#cfe6ff]">contact@example.com</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div
+                    class="flex flex-col gap-6 px-10 py-12 h-[90vh] bg-white shadow-xl rounded-2xl max-sm:w-full max-sm:h-fit max-sm:px-6">
+                    <div class="flex flex-col gap-6 ">
+                        <p class="text-[#2d465e] font-medium text-4xl">Get In Touch</p>
+                        <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante
+                            ipsum
+                            primis.</p>
+                    </div>
+                    <div class="flex gap-5 max-sm:flex-col">
+                        <input type="text" placeholder="Your Name"
+                            class="border-2 border-[gray] rounded-lg p-3 w-full ">
+                        <input type="email" placeholder="Your Email"
+                            class="border-2 border-[gray] rounded-lg p-3 w-full">
+                    </div>
+                    <div class="">
+                        <input type="text" placeholder="Subject" class="border-2 border-[gray] rounded-lg p-3 w-full">
+                    </div>
+                    <div>
+                        <textarea class="border-2 border-[gray] rounded-lg p-3 w-full" name="" id="" rows="7"
+                            placeholder="Message"></textarea>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <button
+                            class="bg-[#0d83fd] w-fit px-8 py-4 cursor-pointer hover:bg-[#0d83fd]/85 rounded-4xl text-white font-medium">Send
+                            Message</button>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="flex w-[55vw] justify-between">
-            <div class="flex flex-col gap-3">
-              <h4 class="text-[#2d465e] font-medium text-lg">Useful Links</h4>
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Home</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >About Us</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Services</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Terms of service</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Privacy policy</a
-              >
+        </section>
+
+        <!-- footer -->
+        <footer class="flex flex-col justify-between px-30 py-10 bg-white h-fit w-full max-sm:px-4">
+            <div class="flex justify-between py-8 max-sm:flex-col max-sm:gap-10">
+                <div class="flex flex-col gap-6">
+                    <a class="text-[#2d465e] font-medium text-3xl pb-2" href="">iLanding</a>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex flex-col gap-1">
+                            <p class="font-light">A108 Adam Street</p>
+                            <p class="font-light">New York, NY 535022</p>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <p class="font-light"><b class="font-medium">Phone: </b>+1 5589 55488 55</p>
+                            <p class="font-light"><b class="font-medium">Email: </b>info@example.com</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <div
+                            class="flex items-center justify-center rounded-[50%] border-black/70 hover:border-[#0d83fd] cursor-pointer border w-10 h-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"
+                                class="text-black/70 hover:text-[#0d83fd]">
+                                <path d="M0 0h16v16H0z" fill="none" />
+                                <path fill="currentColor"
+                                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07l-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                            </svg>
+                        </div>
+                        <div
+                            class="flex items-center justify-center rounded-[50%] border-black/70 hover:border-[#0d83fd] cursor-pointer border w-10 h-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"
+                                class="text-black/70 hover:text-[#0d83fd]">
+                                <path d="M0 0h16v16H0z" fill="none" />
+                                <path fill="currentColor"
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131c.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                            </svg>
+                        </div>
+                        <div
+                            class="flex items-center justify-center rounded-[50%] border-black/70 hover:border-[#0d83fd] cursor-pointer border w-10 h-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"
+                                class="text-black/70 hover:text-[#0d83fd]">
+                                <path d="M0 0h16v16H0z" fill="none" />
+                                <path fill="currentColor"
+                                    d="M8 0C5.829 0 5.556.01 4.703.048C3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7C.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297c.04.852.174 1.433.372 1.942c.205.526.478.972.923 1.417c.444.445.89.719 1.416.923c.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417c.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046c.78.035 1.204.166 1.486.275c.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485c.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598c-.28.11-.704.24-1.485.276c-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598a2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485c-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486c.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276c.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92a.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217a4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334a2.667 2.667 0 0 1 0-5.334" />
+                            </svg>
+                        </div>
+                        <div
+                            class="flex items-center justify-center rounded-[50%] border-black/70 hover:border-[#0d83fd] cursor-pointer border w-10 h-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"
+                                class="text-black/70 hover:text-[#0d83fd]">
+                                <path d="M0 0h16v16H0z" fill="none" />
+                                <path fill="currentColor"
+                                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248c-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586c.173-.431.568-.878 1.232-.878c.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252c-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex w-[55vw] justify-between max-sm:w-full max-sm:flex-col max-sm:gap-20 max-sm:pb-10">
+                    <div class="flex flex-col gap-3">
+                        <h4 class="text-[#2d465e] font-medium text-lg">Useful Links</h4>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Home</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">About Us</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Services</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Terms of service</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Privacy policy</a>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <h4 class="text-[#2d465e] font-medium text-lg">Our Services</h4>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Web Design</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Web Development</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Product Management</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Marketing</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Graphic Design</a>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <h4 class="text-[#2d465e] font-medium text-lg">Hic solutasetp</h4>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Molestiae accusamus iure</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Excepturi dignissimos</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Suscipit distinctio</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Dilecta</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Sit quas consectetur</a>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <h4 class="text-[#2d465e] font-medium text-lg">Nobis illum</h4>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Ipsam</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Laudantium dolorum</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Dinera</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Trodelas</a>
+                        <a class="font-normal text-black/60 hover:text-[#0d83fd]" href="">Flexo</a>
+                    </div>
+                </div>
             </div>
-            <div class="flex flex-col gap-3">
-              <h4 class="text-[#2d465e] font-medium text-lg">Our Services</h4>
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Web Design</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Web Development</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Product Management</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Marketing</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Graphic Design</a
-              >
+            <div class="flex flex-col text-center gap-2 border-t border-[darkgray]/80 pt-5">
+                <p class="text-[0.85rem]">&copy; Copyright <b>iLanding</b> All Rights Reserved</p>
+                <p class="text-[0.85rem]">Designed by <a class="text-[#0d83fd] hover:text-[#0d83fd]/90"
+                        href="">BootstrapMade</a></p>
             </div>
-            <div class="flex flex-col gap-3">
-              <h4 class="text-[#2d465e] font-medium text-lg">Hic solutasetp</h4>
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Molestiae accusamus iure</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Excepturi dignissimos</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Suscipit distinctio</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Dilecta</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Sit quas consectetur</a
-              >
-            </div>
-            <div class="flex flex-col gap-3">
-              <h4 class="text-[#2d465e] font-medium text-lg">Nobis illum</h4>
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Ipsam</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Laudantium dolorum</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Dinera</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Trodelas</a
-              >
-              <a class="font-normal text-black/60 hover:text-[#0d83fd]" href=""
-                >Flexo</a
-              >
-            </div>
-          </div>
-        </div>
+        </footer>
+        <!-- fixed-arrow -->
         <div
-          class="flex flex-col text-center gap-2 border-t border-[darkgray]/80 pt-5"
-        >
-          <p class="text-[0.85rem]">
-            &copy; Copyright <b>iLanding</b> All Rights Reserved
-          </p>
-          <p class="text-[0.85rem]">
-            Designed by
-            <a class="text-[#0d83fd] hover:text-[#0d83fd]/90" href=""
-              >BootstrapMade</a
-            >
-          </p>
+            class="flex items-center justify-center h-12 w-12 bg-[#0d83fd] hover:bg-[#0d83fd]/70 rounded-[50%] cursor-pointer fixed bottom-5 right-8">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 16 16" class="text-white">
+                <path d="M0 0h16v16H0z" fill="none" />
+                <path fill="currentColor" fill-rule="evenodd"
+                    d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5" />
+            </svg>
         </div>
-      </footer>
-      <!-- fixed-arrow -->
-      <div
-        class="flex items-center justify-center h-12 w-12 bg-[#0d83fd] hover:bg-[#0d83fd]/70 rounded-[50%] cursor-pointer fixed bottom-5 right-8"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1.5em"
-          height="1.5em"
-          viewBox="0 0 16 16"
-          class="text-white"
-        >
-          <path d="M0 0h16v16H0z" fill="none" />
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"
-          />
-        </svg>
-      </div>
     </main>
-  </body>
+</body>
+
 </html>
